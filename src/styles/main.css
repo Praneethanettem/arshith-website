@@ -10761,3 +10761,101 @@ html{
   .company-intro-image img { height: 200px !important; }
 
 }
+/* ================================================
+   ABOUT PAGE HERO FIX
+   Paste at VERY BOTTOM of main.css
+   ================================================ */
+
+@media screen and (max-width: 768px) {
+
+  /* ── ABOUT HERO SECTION ── */
+  .about-hero {
+    position: relative !important;
+    height: auto !important;
+    min-height: 70vh !important;
+    overflow: visible !important;
+  }
+
+  .about-banner-image {
+    width: 100% !important;
+    height: 70vh !important;
+    min-height: 300px !important;
+    object-fit: cover !important;
+    display: block !important;
+    animation: none !important; /* stop zoom animation pushing layout */
+  }
+
+  /* THE OVERLAY - this was positioned off screen */
+  .about-overlay {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 88% !important;
+    text-align: center !important;
+    z-index: 10 !important;
+    padding: 0 !important;
+  }
+
+  /* dark overlay so text is readable */
+  .about-hero::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: rgba(0, 0, 0, 0.50) !important;
+    z-index: 5 !important;
+  }
+
+  /* make overlay content sit above dark layer */
+  .about-overlay {
+    z-index: 10 !important;
+  }
+
+  .about-overlay h1 {
+    font-size: 32px !important;
+    line-height: 1.25 !important;
+    color: white !important;
+    margin-bottom: 16px !important;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.7) !important;
+  }
+
+  .about-overlay p {
+    font-size: 15px !important;
+    line-height: 1.75 !important;
+    color: #f5f5f5 !important;
+    max-width: 100% !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6) !important;
+  }
+
+  /* ── REMOVE THE EMPTY GAP BELOW HERO ──
+     The gap was caused by the section after about-hero
+     having extra top margin/padding */
+  .about-hero + section,
+  .about-hero + div,
+  .story-section,
+  .about-section {
+    margin-top: 0 !important;
+    padding-top: 50px !important;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .about-hero {
+    min-height: 60vh !important;
+  }
+
+  .about-banner-image {
+    height: 60vh !important;
+  }
+
+  .about-overlay h1 {
+    font-size: 26px !important;
+  }
+
+  .about-overlay p {
+    font-size: 14px !important;
+  }
+
+}
