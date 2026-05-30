@@ -9945,247 +9945,534 @@ html{
   }
 }
 
-/* ================= MOBILE FIX FOR ALL PAGES ================= */
+/* ================================================
+   ARSHITH GROUPS - MOBILE RESPONSIVE FINAL FIX
+   Add this at the VERY BOTTOM of main.css
+   ================================================ */
 
-@media screen and (max-width:768px){
+@media screen and (max-width: 768px) {
 
-  html,body{
-    width:100%;
-    overflow-x:hidden !important;
+  /* ── RESET DANGEROUS GLOBALS ── */
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  *{
-    max-width:100%;
-    box-sizing:border-box;
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
   }
 
-  /* Navbar */
+  /* ── TYPOGRAPHY - override the conflicting !important sizes ── */
+  h1 { font-size: 36px !important; line-height: 1.25 !important; }
+  h2 { font-size: 28px !important; line-height: 1.3 !important; }
+  h3 { font-size: 22px !important; line-height: 1.4 !important; }
+  h4 { font-size: 18px !important; }
+  p  { font-size: 15px !important; line-height: 1.75 !important; }
 
-  .navbar{
-    padding:15px;
-    flex-direction:column;
-    gap:15px;
+  /* ── SECTION PADDING ── */
+  section,
+  .ecosystem-section,
+  .services-section,
+  .values-section,
+  .ceo-section,
+  .contact-section,
+  .review-section,
+  .leaders-section,
+  .faq-section,
+  .business-section,
+  .story-section,
+  .about-section,
+  .vision-section,
+  .ethics-section,
+  .gain-section,
+  .tech-section,
+  .plans-section,
+  .benefits-section,
+  .overview-section,
+  .career-opportunity-section,
+  .modules-section,
+  .highlights-section,
+  .duration-section,
+  .important-note-section,
+  .registration-section,
+  .quote-section,
+  .program-section,
+  .openings-section,
+  .process-section,
+  .culture-section,
+  .journey-section,
+  .awards-section {
+    padding: 50px 18px !important;
   }
 
-  .nav-links{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
+  /* ── NAVBAR ── */
+  .navbar {
+    padding: 14px 16px !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .nav-links {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 12px !important;
+  }
+
+  .nav-links a,
+  .dropdown button {
+    font-size: 14px !important;
   }
 
   .logo img,
-  .nav-logo img{
-    height:55px;
+  .nav-logo img {
+    height: 50px !important;
   }
 
-  /* Hero */
-
+  /* ── HERO SECTIONS ── */
   .hero-section,
   .careers-hero,
-  .about-hero{
-    min-height:auto;
-    height:auto;
+  .about-hero,
+  .details-hero-section {
+    height: auto !important;
+    min-height: 90vh !important;
   }
 
   .hero-overlay h1,
   .hero-content h1,
-  .about-overlay h1{
-    font-size:42px !important;
-    line-height:1.3;
+  .about-overlay h1,
+  .details-hero-content h1,
+  .careers-overlay h1 {
+    font-size: 34px !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
   }
 
   .hero-overlay p,
   .hero-content p,
-  .about-overlay p{
-    font-size:16px !important;
-    line-height:1.8;
+  .about-overlay p,
+  .details-hero-content p {
+    font-size: 15px !important;
+    line-height: 1.75 !important;
+    text-align: center !important;
   }
 
-  .hero-buttons{
-    flex-direction:column;
-    width:100%;
+  .hero-content {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    padding: 0 16px !important;
+  }
+
+  .hero-content h1 span {
+    font-size: 30px !important;
+  }
+
+  .hero-buttons,
+  .details-hero-buttons,
+  .final-cta-buttons {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 14px !important;
+    width: 100% !important;
   }
 
   .hero-buttons a,
+  .details-hero-buttons a,
+  .final-cta-buttons a,
   .primary-btn,
-  .secondary-btn{
-    width:100%;
+  .secondary-btn {
+    width: 90% !important;
+    max-width: 320px !important;
+    text-align: center !important;
+    padding: 16px 20px !important;
+    font-size: 16px !important;
   }
 
-  .hero-arrow{
-    width:50px;
-    height:50px;
-    font-size:24px;
+  /* ── ALL IMAGES - prevent shrinking to nothing ── */
+  img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
   }
 
-  /* Common Sections */
-
-  section{
-    padding-left:20px !important;
-    padding-right:20px !important;
+  /* Cards with images - set a MINIMUM height, not fixed */
+  .eco-card img,
+  .eco-image img,
+  .program-image img,
+  .opening-image img {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
   }
 
-  h1{
-    font-size:38px !important;
+  .service-card {
+    height: 320px !important;
   }
 
-  h2{
-    font-size:32px !important;
+  .business-card img {
+    height: 200px !important;
+    object-fit: cover !important;
   }
 
-  h3{
-    font-size:24px !important;
+  .news-card img,
+  .home-news-card img {
+    height: 190px !important;
+    object-fit: cover !important;
   }
 
-  p{
-    font-size:16px !important;
-    line-height:1.8 !important;
+  .highlight-card img {
+    height: 210px !important;
+    object-fit: cover !important;
   }
 
-  /* Ecosystem */
-
-  .ecosystem-grid{
-    grid-template-columns:1fr !important;
+  .gain-card img {
+    height: 200px !important;
+    object-fit: cover !important;
   }
 
-  .eco-card{
-    width:100%;
+  .award-card img {
+    height: 200px !important;
+    object-fit: cover !important;
   }
 
-  .eco-card img{
-    height:220px;
+  /* intro image slider */
+  .intro-image-slider {
+    min-width: 100% !important;
+    width: 100% !important;
+    height: 280px !important;
   }
 
-  /* Services */
-
-  .services-grid{
-    grid-template-columns:1fr !important;
+  /* CEO / Chairman images */
+  .ceo-image img,
+  .chairman-image img {
+    width: 100% !important;
+    height: 320px !important;
+    object-fit: cover !important;
   }
 
-  .service-card{
-    height:350px;
+  .leader-card img {
+    width: 100% !important;
+    height: 260px !important;
+    object-fit: cover !important;
   }
 
-  /* Values */
-
-  .values-grid{
-    grid-template-columns:1fr !important;
+  /* ── ALL GRIDS → single column ── */
+  .ecosystem-grid,
+  .services-grid,
+  .values-grid,
+  .business-grid,
+  .review-grid,
+  .faq-container,
+  .contact-info-grid,
+  .overview-grid,
+  .gain-grid,
+  .tech-grid,
+  .plans-grid,
+  .awards-grid,
+  .program-grid,
+  .openings-grid,
+  .experience-grid,
+  .culture-grid,
+  .footer-grid,
+  .career-footer-grid,
+  .stats-section,
+  .impact-section,
+  .modules-grid,
+  .highlights-grid,
+  .objective-grid,
+  .benefits-wrapper,
+  .vision-section,
+  .news-grid,
+  .contact-page-container,
+  .contact-page-form,
+  .contact-info-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
   }
 
-  .value-card{
-    padding:30px 20px;
+  /* contact form spans */
+  .contact-box form {
+    grid-template-columns: 1fr !important;
+  }
+  .contact-box textarea,
+  .contact-page-form textarea,
+  .full-width {
+    grid-column: span 1 !important;
   }
 
-  /* CEO */
-
+  /* ── FLEX SECTIONS → column ── */
   .ceo-container,
-  .ceo-section{
-    flex-direction:column !important;
-    padding:40px 20px;
+  .ceo-section,
+  .chairman-section,
+  .story-section,
+  .ethics-section,
+  .leader-card,
+  .office-content,
+  .company-intro-section,
+  .fresh-video-section,
+  .intro-section,
+  .career-opportunity-section,
+  .journey-section,
+  .about-row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
   }
 
-  .ceo-image{
-    width:100% !important;
+  .ceo-image,
+  .ceo-content,
+  .company-intro-image,
+  .company-intro-content,
+  .fresh-video-left,
+  .fresh-video-right {
+    width: 100% !important;
   }
 
-  .ceo-image img{
-    width:100%;
-    height:auto;
+  /* ── CARD PADDING - prevent content cutting ── */
+  .eco-content,
+  .overview-card,
+  .gain-content,
+  .module-card,
+  .objective-card,
+  .highlight-content,
+  .plan-content,
+  .program-content,
+  .opening-content,
+  .culture-box,
+  .experience-box,
+  .faq-card,
+  .review-card,
+  .value-card,
+  .contact-info-card,
+  .vision-card {
+    padding: 22px 18px !important;
   }
 
-  .ceo-content{
-    width:100%;
-    text-align:center;
+  .contact-box,
+  .career-form {
+    padding: 24px 16px !important;
   }
 
-  /* Business */
-
-  .business-grid{
-    grid-template-columns:1fr !important;
+  .registration-card,
+  .important-note-card,
+  .important-note-content {
+    padding: 36px 18px !important;
   }
 
-  /* Stats */
-
-  .stats-section{
-    grid-template-columns:1fr !important;
+  .duration-card {
+    padding: 44px 20px !important;
   }
 
-  /* Leaders */
+  .duration-card h2 { font-size: 28px !important; }
+  .duration-card h3 { font-size: 38px !important; }
 
-  .leader-card{
-    flex-direction:column;
-    padding:25px;
+  /* ── LEADER CARD ── */
+  .leader-card {
+    flex-direction: column !important;
+    padding: 22px !important;
   }
 
-  .leader-card img{
-    width:100%;
-    height:auto;
+  .leader-info,
+  .leader-card > div {
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
-  /* Vision */
-
-  .vision-section{
-    grid-template-columns:1fr !important;
+  /* ── FLOATING ICONS - always hide on mobile ── */
+  .floating-icons,
+  .floating-words,
+  .intro-circle,
+  .contact-circle,
+  .organic-stamp {
+    display: none !important;
   }
 
-  .vision-card{
-    padding:25px;
+  /* ── FOOTER ── */
+  .footer,
+  .career-footer-full {
+    padding: 48px 18px 28px !important;
+    text-align: center !important;
   }
 
-  .vision-card img{
-    width:150px;
-    height:150px;
+  .footer-grid,
+  .career-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
   }
 
-  /* Ethics */
-
-  .ethics-section{
-    flex-direction:column;
+  .social-links,
+  .career-social-links,
+  .founder-links,
+  .leader-links {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
   }
 
-  .ethics-section img{
-    width:100%;
+  /* ── CEO SECTION ── */
+  .ceo-content h2 {
+    font-size: 30px !important;
   }
 
-  /* FAQ */
-
-  .faq-container{
-    grid-template-columns:1fr !important;
+  .ceo-content > h4 {
+    font-size: 18px !important;
   }
 
-  /* Reviews */
-
-  .review-grid{
-    grid-template-columns:1fr !important;
+  .ceo-content p {
+    font-size: 15px !important;
   }
 
-  /* Contact */
-
-  .contact-box{
-    padding:25px;
+  /* ── STATS / IMPACT ── */
+  .stat-card h2,
+  .impact-number {
+    font-size: 42px !important;
   }
 
-  .contact-box form{
-    grid-template-columns:1fr !important;
+  /* ── PLAN CARD BADGE ── */
+  .plan-badge {
+    width: 80px !important;
+    height: 80px !important;
+    font-size: 18px !important;
+    top: 14px !important;
+    right: 14px !important;
   }
 
-  .full-width{
-    grid-column:span 1 !important;
+  /* ── TIMELINE ── */
+  .timeline {
+    flex-direction: column !important;
+    align-items: center !important;
   }
 
-  .contact-box textarea{
-    grid-column:span 1 !important;
+  .timeline-line {
+    width: 5px !important;
+    height: 40px !important;
   }
 
-  /* Footer */
-
-  .footer-grid{
-    grid-template-columns:1fr !important;
-    text-align:center;
+  /* ── SUBSCRIBE BOX ── */
+  .subscribe-box {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 14px !important;
   }
 
-  .social-links{
-    justify-content:center;
+  .subscribe-box input {
+    width: 100% !important;
+    max-width: 320px !important;
   }
 
+  /* ── DROPDOWN ── */
+  .dropdown-content {
+    min-width: 180px !important;
+  }
+
+  /* ── GALLERY ── */
+  .gallery-scroll img {
+    width: 240px !important;
+    height: 160px !important;
+  }
+
+  /* ── FINAL CTA ── */
+  .final-cta-section {
+    height: auto !important;
+    min-height: 500px !important;
+  }
+
+  .final-cta-content h2 {
+    font-size: 30px !important;
+  }
+
+  .final-cta-content p {
+    font-size: 16px !important;
+  }
+
+  /* ── JOURNEY SECTION ── */
+  .journey-left,
+  .journey-grid {
+    width: 100% !important;
+  }
+
+  .journey-left h2 {
+    font-size: 38px !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .journey-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── QUOTE SECTION ── */
+  .quote-overlay {
+    padding: 40px 18px !important;
+  }
+
+  .quote-overlay h2 {
+    font-size: 26px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* ── NEWS ── */
+  .news-section {
+    padding: 50px 18px !important;
+  }
+
+  .home-news-card {
+    min-width: 280px !important;
+  }
+
+  /* ── CONTACT PAGE ── */
+  .contact-page-overlay h1 {
+    font-size: 34px !important;
+  }
+
+  .contact-socials {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+
+  /* ── VISION CARDS ── */
+  .vision-card img {
+    width: 140px !important;
+    height: 140px !important;
+  }
+
+  .vision-card h2 {
+    font-size: 26px !important;
+  }
+}
+
+/* ── SMALL PHONES (≤ 480px) ── */
+@media screen and (max-width: 480px) {
+
+  h1 { font-size: 30px !important; }
+  h2 { font-size: 24px !important; }
+  h3 { font-size: 20px !important; }
+
+  .hero-overlay h1,
+  .hero-content h1,
+  .details-hero-content h1 {
+    font-size: 28px !important;
+  }
+
+  .ceo-image img,
+  .chairman-image img {
+    height: 260px !important;
+  }
+
+  .leader-card img {
+    height: 220px !important;
+  }
+
+  .stat-card h2,
+  .impact-number {
+    font-size: 36px !important;
+  }
+
+  .duration-card h3 {
+    font-size: 30px !important;
+  }
 }
