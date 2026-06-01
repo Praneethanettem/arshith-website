@@ -33,7 +33,7 @@ function About() {
 
       {/* HERO */}
 
-      <section className="about-hero">
+      <section className="about-hero" data-aos="fade-up">
 
         <img
           src={aboutbanner}
@@ -67,7 +67,7 @@ function About() {
 
       {/* STORY */}
 
-      <section className="story-section">
+     <section className="story-section" data-aos="fade-right">
 
         <img src={grouppic} alt="" />
 
@@ -97,7 +97,7 @@ function About() {
 
       {/* COMPANIES */}
 
-      <section className="business-section">
+     <section className="business-section" data-aos="zoom-in">
 
         <h2>
           Our Companies
@@ -110,6 +110,7 @@ function About() {
             target="_blank"
             rel="noreferrer"
             className="business-card"
+data-aos="zoom-in"
           >
 
             <img src={office} alt="" />
@@ -132,7 +133,8 @@ function About() {
             href="https://suntechorganization.com/"
             target="_blank"
             rel="noreferrer"
-            className="business-card"
+           className="business-card"
+data-aos="zoom-in"
           >
 
             <img src={suntech} alt="" />
@@ -157,24 +159,24 @@ function About() {
 
       {/* STATS */}
 
-      <section className="stats-section">
+      <section className="stats-section" data-aos="fade-up">
 
-        <div className="stat-card">
+        <div className="stat-card" data-aos="fade-up">
           <h2>7+</h2>
           <p>Years of Experience</p>
         </div>
 
-        <div className="stat-card">
+        <div className="stat-card" data-aos="fade-up">
           <h2>10+</h2>
           <p>Services & Solutions</p>
         </div>
 
-        <div className="stat-card">
+       <div className="stat-card" data-aos="fade-up">
           <h2>100+</h2>
           <p>Quality Products</p>
         </div>
 
-        <div className="stat-card">
+        <div className="stat-card" data-aos="fade-up">
           <h2>30K+</h2>
           <p>Happy Customers</p>
         </div>
@@ -183,7 +185,7 @@ function About() {
 
       {/* LEADERS */}
 
-<section className="leaders-section">
+<section className="leaders-section" data-aos="fade-left">
 
   <h2>
     Visionary Leadership
@@ -192,7 +194,8 @@ function About() {
   {/* FAROOK */}
 
   <div
-    className="leader-card"
+  className="leader-card"
+  data-aos="fade-left"
     style={{
       display: "flex",
       flexDirection:
@@ -300,7 +303,8 @@ function About() {
   {/* PALLAVI */}
 
   <div
-    className="leader-card"
+  className="leader-card"
+  data-aos="fade-left"
     style={{
       display: "flex",
       flexDirection:
@@ -407,7 +411,7 @@ function About() {
 </section>
 {/* ARSHITH FRESH VIDEO SECTION */}
 
-<section className="fresh-video-section">
+<section className="fresh-video-section" data-aos="zoom-in">
 
   <div className="fresh-video-left">
 
@@ -455,9 +459,9 @@ function About() {
 
       {/* VISION MISSION */}
 
-      <section className="vision-section">
+     <section className="vision-section" data-aos="fade-up">
 
-        <div className="vision-card">
+        <div className="vision-card" data-aos="zoom-in">
 
           <img src={vision} alt="" />
 
@@ -497,8 +501,7 @@ function About() {
 
       {/* VALUES */}
 
-      <section className="ethics-section">
-
+     <section className="ethics-section" data-aos="fade-right">
         <img src={ethics} alt="" />
 
         <div>
@@ -527,7 +530,7 @@ function About() {
 
       </section>
 {/* FAQS */}
-<section className="faq-section">
+<section className="faq-section" data-aos="fade-up">
 
   <h2>
     FAQ's
@@ -535,7 +538,7 @@ function About() {
 
   <div className="faq-container">
 
-    <div className="faq-card">
+   <div className="faq-card" data-aos="fade-up">
 
       <h3>
         What services does Arshith Group provide?
@@ -551,7 +554,7 @@ function About() {
 
     </div>
 
-    <div className="faq-card">
+   <div className="faq-card" data-aos="fade-up">
 
       <h3>
         What businesses are part of Arshith Group?
@@ -566,7 +569,7 @@ function About() {
 
     </div>
 
-    <div className="faq-card">
+    <div className="faq-card" data-aos="fade-up">
 
       <h3>
         How can businesses collaborate with Arshith Group?
@@ -582,7 +585,7 @@ function About() {
 
     </div>
 
-    <div className="faq-card">
+   <div className="faq-card" data-aos="fade-up">
 
       <h3>
         Does Arshith Group provide internship opportunities?
@@ -602,7 +605,7 @@ function About() {
 </section>
 {/* REVIEWS */}
 
-<section className="review-section">
+<section className="review-section" data-aos="zoom-in">
 
   <h2>
     What Our Customers Say
@@ -610,7 +613,7 @@ function About() {
 
   <div className="review-grid">
 
-    <div className="review-card">
+    <div className="review-card" data-aos="zoom-in">
 
       <p>
 

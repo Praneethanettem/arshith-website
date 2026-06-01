@@ -246,8 +246,9 @@ const companyImages = [
 
 
       {/* HERO */}
-     <section
+    <section
   className="hero-section"
+  data-aos="fade-up"
   style={{
     backgroundImage:
     `url(${slides[currentSlide].image})`
@@ -348,7 +349,10 @@ const companyImages = [
   </div>
 
 </section>
-    <section className="modern-company-section">
+    <section
+  className="modern-company-section"
+  data-aos="fade-right"
+>
 
   <div className="company-intro-image">
 
@@ -385,6 +389,7 @@ const companyImages = [
 <section
   id="ecosystem"
   className="business-ecosystem fade-up-section"
+  data-aos="fade-up"
 >
 
   <h2>
@@ -442,6 +447,7 @@ const companyImages = [
     <a
       href="#"
       className="eco-card"
+data-aos="zoom-in"
     >
 
       <div className="eco-image">
@@ -513,7 +519,10 @@ const companyImages = [
 
 </section>
 {/* JOURNEY */}
-<section className="journey-section">
+<section
+  className="journey-section"
+  data-aos="fade-left"
+>
 
   <img
     src={businessmeetings}
@@ -540,7 +549,10 @@ business excellence and continuous growth.
 
   <div className="journey-grid">
 
-    <div className="journey-card">
+   <div
+  className="journey-card"
+  data-aos="fade-up"
+>
 
       <h3>
         2019
@@ -601,7 +613,10 @@ business excellence and continuous growth.
 </section>
       {/* SERVICES */}
 
-      <section className="services-section">
+     <section
+  className="services-section"
+  data-aos="fade-up"
+>
        
 
         <h2>
@@ -623,7 +638,8 @@ business excellence and continuous growth.
                 href={service.link || "#"}
                 target="_blank"
                 rel="noreferrer"
-                className="service-card"
+               className="service-card"
+data-aos="zoom-in"
                 key={index}
               >
 
@@ -655,7 +671,10 @@ business excellence and continuous growth.
 
      {/* VALUES */}
 
-<section className="values-section">
+<section
+  className="values-section"
+  data-aos="fade-right"
+>
   <h2>
       Our Core Foundations
   </h2>
@@ -670,7 +689,10 @@ business excellence and continuous growth.
 
   <div className="values-grid">
 
-    <div className="value-card">
+    <div
+  className="value-card"
+  data-aos="zoom-in"
+>
 
       <img src={innovation} alt="" />
 
@@ -727,7 +749,10 @@ business excellence and continuous growth.
 
 {/* WHY CHOOSE US */}
 
-<section className="why-section">
+<section
+  className="why-section"
+  data-aos="fade-up"
+>
 
   <div className="why-header">
 
@@ -749,7 +774,10 @@ business excellence and continuous growth.
 
   <div className="why-grid">
 
-    <div className="why-card">
+    <div
+  className="why-card"
+  data-aos="zoom-in"
+>
 
   <img
     src={digitalmarketing}
@@ -814,7 +842,10 @@ business excellence and continuous growth.
 </section>
 {/* CEO */}
 
-<section className="ceo-section">
+<section
+  className="ceo-section"
+  data-aos="fade-right"
+>
 
   <div className="ceo-container">
 
@@ -884,7 +915,10 @@ business excellence and continuous growth.
 
 <section className="impact-section">
 
-  <div className="impact-card">
+  <div
+  className="impact-card"
+  data-aos="zoom-in"
+>
 
     <div className="impact-number">
       7+
@@ -896,7 +930,10 @@ business excellence and continuous growth.
 
   </div>
 
-  <div className="impact-card">
+ <div
+  className="impact-card"
+  data-aos="zoom-in"
+>
 
     <div className="impact-number">
       10+
@@ -908,7 +945,10 @@ business excellence and continuous growth.
 
   </div>
 
-  <div className="impact-card">
+ <div
+  className="impact-card"
+  data-aos="zoom-in"
+>
 
     <div className="impact-number">
       100+
@@ -920,7 +960,10 @@ business excellence and continuous growth.
 
   </div>
 
-  <div className="impact-card">
+ <div
+  className="impact-card"
+  data-aos="zoom-in"
+>
 
     <div className="impact-number">
       30K+
@@ -961,6 +1004,7 @@ business excellence and continuous growth.
 
         <div
           className="home-news-card"
+data-aos="zoom-in"
           key={index}
         >
 
@@ -992,7 +1036,10 @@ business excellence and continuous growth.
 </section>
 {/* AWARDS */}
 
-<section className="awards-section">
+<section
+  className="awards-section"
+  data-aos="fade-left"
+>
 
   <h2>
     Awards & Recognition
@@ -1008,7 +1055,10 @@ business excellence and continuous growth.
 
   <div className="awards-grid">
 
-    <div className="award-card">
+    <div
+  className="award-card"
+  data-aos="zoom-in"
+>
 
       <img src={awardceremony} alt="" />
 
@@ -1054,7 +1104,10 @@ business excellence and continuous growth.
 
       {/* CONTACT */}
 
-      <section className="contact-section">
+      <section
+  className="contact-section"
+  data-aos="fade-up"
+>
         <div className="contact-circle contact-circle1"></div>
 <div className="contact-circle contact-circle2"></div>
 <div className="contact-circle contact-circle3"></div>

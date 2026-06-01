@@ -69,22 +69,16 @@ function Navbar() {
 
       <div className={`nav-links${menuOpen ? " mobile-open" : ""}`}>
 
-        {isMobile && (
-          <button onClick={closeAll} style={{
-            position:"absolute", top:"16px", right:"20px",
-            fontSize:"36px", background:"none", border:"none",
-            cursor:"pointer", color:"#333", lineHeight:1, zIndex:1002,
-          }}>
-            &times;
-          </button>
-        )}
 
         <Link to="/" onClick={closeAll}>Home</Link>
         <Link to="/about" onClick={closeAll}>About Us</Link>
 
         <div className={`dropdown${businessOpen ? " open" : ""}`}>
           <button className="dropdown-btn"
-            onClick={() => isMobile && setBusinessOpen(!businessOpen)}>
+           onClick={() => {
+  setBusinessOpen(!businessOpen);
+  setCareersOpen(false);
+}} >
             Businesses ▾
           </button>
           <div className="dropdown-content">
@@ -98,7 +92,10 @@ function Navbar() {
 
         <div className={`dropdown${careersOpen ? " open" : ""}`}>
           <button className="dropdown-btn"
-            onClick={() => isMobile && setCareersOpen(!careersOpen)}>
+           onClick={() => {
+  setCareersOpen(!careersOpen);
+  setBusinessOpen(false);
+}} >
             Careers ▾
           </button>
           <div className="dropdown-content">
