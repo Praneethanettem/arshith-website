@@ -10021,7 +10021,7 @@ html{
 
   .nav-links {
     flex-wrap: wrap !important;
-    justify-content: center !important;
+    
     gap: 12px !important;
   }
 
@@ -11388,7 +11388,7 @@ html{
   .nav-links {
     display: flex !important;
     flex-wrap: wrap !important;
-    justify-content: center !important;
+
     gap: 10px 16px !important;
     width: 100% !important;
   }
@@ -11692,22 +11692,7 @@ body {
   }
 
   /* ── FULL SCREEN NAV MENU - hidden by default ── */
-  .nav-links {
-    display: none !important;
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-   width: 100%;
-    height: 100vh !important;
-    background: white !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 24px !important;
-     z-index: 10000 !important;
-    overflow-y: auto !important;
-  }
-
+s
   /* Show when open */
   .nav-links.mobile-open {
     display: flex !important;
@@ -11958,7 +11943,7 @@ section,
     background: white !important;
     flex-direction: column !important;
     align-items: center !important;
-    justify-content: center !important;
+   
     gap: 22px !important;
     z-index: 999 !important;
     overflow-y: auto !important;
@@ -12455,7 +12440,7 @@ width: 100%;
     background: white !important;
     flex-direction: column !important;
     align-items: center !important;
-    justify-content: center !important;
+  
     gap: 22px !important;
     z-index: 999 !important;
     overflow-y: auto !important;
@@ -12974,13 +12959,49 @@ body,
   }
 }
 @media (max-width: 768px) {
+/* MOBILE HAMBURGER MENU */
+.nav-links {
+  display: none !important;
 
-  .footer-grid {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 20px !important;
-  }
+  position: absolute !important;
+  top: 70px !important;
+  right: 10px !important;
 
+  width: 280px !important;
+  height: auto !important;
+
+  background: white !important;
+  border-radius: 16px !important;
+
+  padding: 15px !important;
+
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+
+  gap: 10px !important;
+
+  z-index: 99999 !important;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+  .nav-links.mobile-open {
+  display: flex !important;
+}
+}
+.nav-links a {
+  display: block !important;
+  width: 100% !important;
+  padding: 10px 0 !important;
+}
+
+.dropdown {
+  width: 100% !important;
+}
+
+.dropdown-btn {
+  width: 100% !important;
+  text-align: left !important;
+}
   /* Arshith Group takes full width */
   .footer-grid > div:first-child {
     grid-column: 1 / -1 !important;
@@ -12991,54 +13012,7 @@ body,
   }
 
 }
-/* ==========================
-   FORCE MOBILE HAMBURGER FIX
-   ========================== */
 
-@media (max-width: 768px) {
-
-  .navbar {
-    position: relative !important;
-  }
-
-  /* Hide menu by default */
-  .nav-links {
-    display: none !important;
-  }
-
-  /* Show only when hamburger clicked */
-  .nav-links.mobile-open {
-    display: flex !important;
-    flex-direction: column !important;
-
-    position: absolute !important;
-    top: 65px !important;
-    right: 10px !important;
-    left: auto !important;
-
-    width: 260px !important;
-    height: auto !important;
-    max-height: 80vh !important;
-
-    background: #fff !important;
-    border-radius: 15px !important;
-
-    padding: 15px !important;
-    gap: 12px !important;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
-
-    overflow-y: auto !important;
-    z-index: 999999 !important;
-  }
-
-  .nav-links.mobile-open a,
-  .nav-links.mobile-open .dropdown-btn {
-    width: 100% !important;
-    text-align: left !important;
-    font-size: 16px !important;
-  }
-}
 /* ==========================
    FORCE MOBILE FOOTER FIX
    ========================== */
@@ -13062,3 +13036,314 @@ body,
     line-height: 1.5 !important;
   }
 }
+@media (max-width: 768px) {
+
+  .nav-links.mobile-open {
+    display: flex !important;
+    flex-direction: column !important;
+
+    position: absolute !important;
+    top: 70px !important;
+    right: 10px !important;
+
+    width: 280px !important;
+
+    height: auto !important;
+    min-height: 450px !important;
+    max-height: 80vh !important;
+
+    background: #fff !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    z-index: 999999 !important;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+  }
+
+  .nav-links.mobile-open > * {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+  }
+
+  .nav-links a,
+.dropdown-btn {
+  width: 100% !important;
+
+  display: block !important;
+
+  text-align: center !important; /* change to center if you want */
+
+  padding: 12px 15px !important;
+
+  font-size: 18px !important;
+
+  font-weight: 600 !important;
+
+  border-radius: 10px !important;
+
+  box-sizing: border-box !important;
+}
+.nav-links.mobile-open {
+  border: 1px solid rgba(200,155,0,0.15) !important;
+
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    #fafafa
+  ) !important;
+}
+.nav-links.mobile-open {
+  border: 1px solid rgba(200,155,0,0.15) !important;
+
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    #fafafa
+  ) !important;
+}
+  .nav-links a:hover,
+.dropdown-btn:hover {
+  background: #fff8e7 !important;
+  color: #c89b00 !important;
+
+  transform: translateX(5px) !important;
+
+  box-shadow: 0 4px 12px rgba(200,155,0,0.15) !important;
+}
+
+  .dropdown {
+    width: 100% !important;
+  }
+
+  .dropdown-content {
+    display: none !important;
+    width: 100% !important;
+    background: #f5f5f5 !important;
+    border-radius: 10px !important;
+    margin-top: 6px !important;
+    padding: 6px 0 !important;
+  }
+
+  .dropdown.open .dropdown-content {
+    display: block !important;
+  }
+
+  .dropdown-content a {
+    display: block !important;
+    padding: 10px 15px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* ===== FINAL MOBILE FOOTER LAYOUT ===== */
+
+@media (max-width: 768px) {
+
+  .footer-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  /* Arshith Group section full width */
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1 !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* About Us */
+  .footer-grid > div:nth-child(2) {
+    grid-column: 1 !important;
+  }
+
+  /* Connect */
+  .footer-grid > div:nth-child(4) {
+    grid-column: 2 !important;
+  }
+
+  /* Businesses goes below */
+  .footer-grid > div:nth-child(3) {
+    grid-column: 1 / -1 !important;
+    margin-top: 10px !important;
+  }
+
+  .footer-links,
+  .footer-grid > div {
+    text-align: left !important;
+  }
+
+  .footer-grid h3 {
+    font-size: 20px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .footer-grid p,
+  .footer-links a {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 6px !important;
+  }
+}
+@media (max-width: 768px) {
+
+  /* About Us left */
+  .footer-grid > div:nth-child(2) {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+  }
+
+  /* Connect right beside About Us */
+  .footer-grid > div:nth-child(4) {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+
+    align-self: start !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* Businesses below both */
+  .footer-grid > div:nth-child(3) {
+    grid-column: 1 / -1 !important;
+    grid-row: 3 !important;
+    margin-top: 15px !important;
+  }
+}
+@media (max-width: 768px) {
+
+  .footer-grid > div:nth-child(4) {
+    padding-right: 40px !important;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .footer-grid > div:nth-child(4) {
+    transform: translateX(-20px) !important;
+  }
+
+}
+@media (max-width: 768px) {
+
+  /* Arshith Group section */
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+  }
+
+  .footer-grid > div:first-child p {
+    max-width: 100% !important;
+    width: 100% !important;
+    line-height: 1.8 !important;
+  }
+
+  .social-links {
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .footer-grid > div:first-child {
+    text-align: center !important;
+  }
+
+  .footer-grid > div:first-child p {
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+}
+@media (max-width: 768px) {
+
+  /* Arshith Group section */
+  .footer-grid > div:first-child {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* Description */
+  .footer-grid > div:first-child p {
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto 15px auto !important;
+    line-height: 1.8 !important;
+  }
+
+  /* Social Icons */
+  .social-links {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 18px !important;
+    width: 100% !important;
+    margin: 15px auto 0 auto !important;
+  }
+
+  .social-links a {
+    margin: 0 !important;
+  }
+
+}
+/* ===== PERFECT MOBILE FOOTER CENTER ===== */
+
+@media (max-width: 768px) {
+
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+
+    text-align: center !important;
+
+    width: 100% !important;
+    padding: 0 15px !important;
+  }
+
+  .footer-grid > div:first-child h2 {
+    text-align: center !important;
+    width: 100% !important;
+    margin-bottom: 15px !important;
+  }
+
+  .footer-grid > div:first-child p {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    margin: 0 auto 18px auto !important;
+    line-height: 1.8 !important;
+  }
+
+  /* Social icons in one centered row */
+  .social-links {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+
+    width: 100% !important;
+    gap: 18px !important;
+
+    margin: 0 auto !important;
+  }
+
+  .social-links a {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+} 
