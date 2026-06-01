@@ -1,13 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import arshithlogo from "../assets/logo/arshithlogo.png";
 
 function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen]         = useState(false);
   const [businessOpen, setBusinessOpen] = useState(false);
-  const [careersOpen, setCareersOpen] = useState(false);
+  const [careersOpen, setCareersOpen]   = useState(false);
+  const [isMobile, setIsMobile]         = useState(window.innerWidth <= 768);
 
-  // Close everything
+  useEffect(() => {
+    const handle = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handle);
+    return () => window.removeEventListener("resize", handle);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
   const closeAll = () => {
     setMenuOpen(false);
     setBusinessOpen(false);
@@ -17,98 +28,93 @@ function Navbar() {
   return (
     <nav className="navbar">
 
-      {/* LOGO */}
       <div className="logo">
-        <img src={arshithlogo} alt="Arshith Group Logo" />
+        <Link to="/" onClick={closeAll}>
+          <img src={arshithlogo} alt="Arshith Group Logo" />
+        </Link>
       </div>
 
-      {/* HAMBURGER BUTTON - only visible on mobile via CSS */}
-      <button
-        className={`hamburger-btn ${menuOpen ? "open" : ""}`}
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Toggle Menu"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      {/* NAV LINKS */}
-      <div className={`nav-links ${menuOpen ? "mobile-open" : ""}`}>
-
-        {/* Close X button - only shows inside mobile menu */}
-        <button className="mobile-close-btn" onClick={closeAll}>
-          &times;
+      {isMobile && (
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle Menu"
+          style={{
+            display:"flex", flexDirection:"column",
+            justifyContent:"space-between",
+            width:"28px", height:"20px",
+            background:"none", border:"none",
+            cursor:"pointer", padding:"0", zIndex:1001,
+          }}
+        >
+          <span style={{
+            display:"block", width:"100%", height:"3px",
+            background:"#333", borderRadius:"3px",
+            transition:"all 0.3s ease",
+            transform: menuOpen ? "translateY(8px) rotate(45deg)" : "none",
+          }}/>
+          <span style={{
+            display:"block", width:"100%", height:"3px",
+            background:"#333", borderRadius:"3px",
+            transition:"all 0.3s ease",
+            opacity: menuOpen ? 0 : 1,
+          }}/>
+          <span style={{
+            display:"block", width:"100%", height:"3px",
+            background:"#333", borderRadius:"3px",
+            transition:"all 0.3s ease",
+            transform: menuOpen ? "translateY(-9px) rotate(-45deg)" : "none",
+          }}/>
         </button>
+      )}
 
-        <Link to="/" onClick={closeAll}>
-          Home
-        </Link>
+      <div className={`nav-links${menuOpen ? " mobile-open" : ""}`}>
 
-        <Link to="/about" onClick={closeAll}>
-          About Us
-        </Link>
+        {isMobile && (
+          <button onClick={closeAll} style={{
+            position:"absolute", top:"16px", right:"20px",
+            fontSize:"36px", background:"none", border:"none",
+            cursor:"pointer", color:"#333", lineHeight:1, zIndex:1002,
+          }}>
+            &times;
+          </button>
+        )}
 
-        {/* BUSINESSES DROPDOWN */}
-        <div className={`dropdown ${businessOpen ? "open" : ""}`}>
-          <button
-            className="dropdown-btn"
-            onClick={() => setBusinessOpen(!businessOpen)}
-          >
+        <Link to="/" onClick={closeAll}>Home</Link>
+        <Link to="/about" onClick={closeAll}>About Us</Link>
+
+        <div className={`dropdown${businessOpen ? " open" : ""}`}>
+          <button className="dropdown-btn"
+            onClick={() => isMobile && setBusinessOpen(!businessOpen)}>
             Businesses ▾
           </button>
           <div className="dropdown-content">
-            <a href="https://arshithfresh.com/" target="_blank" rel="noreferrer" onClick={closeAll}>
-              E-Commerce
-            </a>
-            <a href="https://suntechorganization.com/" target="_blank" rel="noreferrer" onClick={closeAll}>
-              Digital Marketing
-            </a>
-            <a href="https://suntechorganization.com/" target="_blank" rel="noreferrer" onClick={closeAll}>
-              Software Development
-            </a>
-            <a href="https://suntechorganization.com/" target="_blank" rel="noreferrer" onClick={closeAll}>
-              IT Consulting
-            </a>
-            <a href="https://suntechorganization.com/" target="_blank" rel="noreferrer" onClick={closeAll}>
-              Backend Support
-            </a>
+            <a href="https://arshithfresh.com/" target="_blank" rel="noreferrer" onClick={closeAll}>E-Commerce</a>
+            <a href="https://suntechorganization.com/" target="_blank" rel="noreferrer" onClick={closeAll}>Digital Marketing</a>
+            <a href="https://suntechorganization.com/" target="_blank" rel="noreferrer" onClick={closeAll}>Software Development</a>
+            <a href="https://suntechorganization.com/" target="_blank" rel="noreferrer" onClick={closeAll}>IT Consulting</a>
+            <a href="https://suntechorganization.com/" target="_blank" rel="noreferrer" onClick={closeAll}>Backend Support</a>
           </div>
         </div>
 
-        {/* CAREERS DROPDOWN */}
-        <div className={`dropdown ${careersOpen ? "open" : ""}`}>
-          <button
-            className="dropdown-btn"
-            onClick={() => setCareersOpen(!careersOpen)}
-          >
+        <div className={`dropdown${careersOpen ? " open" : ""}`}>
+          <button className="dropdown-btn"
+            onClick={() => isMobile && setCareersOpen(!careersOpen)}>
             Careers ▾
           </button>
           <div className="dropdown-content">
-            <a href="/careers#internships" onClick={closeAll}>
-              Internships
-            </a>
-            <a href="/careers#jobs" onClick={closeAll}>
-              Job Opportunities
-            </a>
-            <a href="/careers#culture" onClick={closeAll}>
-              Work Culture
-            </a>
+            <a href="/careers#internships" onClick={closeAll}>Internships</a>
+            <a href="/careers#jobs" onClick={closeAll}>Job Opportunities</a>
+            <a href="/careers#culture" onClick={closeAll}>Work Culture</a>
           </div>
         </div>
 
-        <Link to="/latestupdates" onClick={closeAll}>
-          News
-        </Link>
-
-        <Link to="/contact" onClick={closeAll}>
-          Contact Us
-        </Link>
+        <Link to="/latestupdates" onClick={closeAll}>News</Link>
+        <Link to="/contact" onClick={closeAll}>Contact Us</Link>
 
       </div>
-
     </nav>
   );
 }
 
 export default Navbar;
+

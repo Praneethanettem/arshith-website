@@ -11779,3 +11779,462 @@ body {
     padding-left: 20px !important;
   }
 }
+
+/* ================================================================
+   FINAL COMPLETE FIX
+   Paste at VERY BOTTOM of main.css — this overrides everything above
+   ================================================================ */
+
+/* ================================================================
+   FIX 1: HORIZONTAL SCROLL / WHITE SPACE WHEN SLIDING LEFT
+   ================================================================ */
+html,
+body,
+#root {
+  width: 100% !important;
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Every direct section should never exceed viewport */
+section,
+.navbar,
+.footer,
+.hero-section,
+.ecosystem-section,
+.services-section,
+.values-section,
+.ceo-section,
+.contact-section,
+.review-section,
+.home-news-section,
+.why-section,
+.journey-section,
+.modern-company-section,
+.business-ecosystem {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* Ticker animations are a common cause of horizontal overflow */
+.career-track,
+.news-track,
+.ticker-track {
+  will-change: transform !important;
+}
+
+/* ================================================================
+   FIX 2: HERO SLIDER - second slide cut off on left
+   ================================================================ */
+.hero-section {
+  position: relative !important;
+  width: 100% !important;
+  overflow: hidden !important;
+}
+
+.hero-slide {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+.hero-slide img,
+.slide-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+/* Glow effect overflows — always hide */
+.glow-effect {
+  display: none !important;
+}
+
+/* ================================================================
+   FIX 3: ECO CARD / INNOVATION IN ACTION — image fits card
+   ================================================================ */
+.eco-card {
+  overflow: hidden !important;
+}
+
+.eco-image {
+  width: 100% !important;
+  height: 240px !important;
+  overflow: hidden !important;
+  border-radius: 22px 22px 0 0 !important;
+  display: block !important;
+}
+
+.eco-image img,
+.eco-card img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+/* ================================================================
+   MOBILE FIXES (max-width: 768px)
+   ================================================================ */
+@media screen and (max-width: 768px) {
+
+  /* ── FIX: NAVBAR — hamburger visible, links hidden ── */
+
+  /* Step 1: Navbar is a row with logo on left, hamburger on right */
+  .navbar {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 12px 18px !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    background: white !important;
+  }
+
+  /* Step 2: Show hamburger button */
+  .hamburger-btn {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 28px !important;
+    height: 20px !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    z-index: 1001 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .hamburger-btn span {
+    display: block !important;
+    width: 100% !important;
+    height: 3px !important;
+    background: #333 !important;
+    border-radius: 3px !important;
+    transition: all 0.3s ease !important;
+  }
+
+  /* X when open */
+  .hamburger-btn.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg) !important;
+  }
+  .hamburger-btn.open span:nth-child(2) {
+    opacity: 0 !important;
+    transform: scaleX(0) !important;
+  }
+  .hamburger-btn.open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg) !important;
+  }
+
+  /* Step 3: Hide nav links by default */
+  .nav-links {
+    display: none !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: white !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 22px !important;
+    z-index: 999 !important;
+    overflow-y: auto !important;
+    padding: 60px 20px 40px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Step 4: Show when open */
+  .nav-links.mobile-open {
+    display: flex !important;
+  }
+
+  .nav-links > a,
+  .nav-links .dropdown-btn {
+    font-size: 20px !important;
+    color: #111 !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 6px 0 !important;
+    width: 100% !important;
+  }
+
+  .nav-links > a:hover,
+  .nav-links .dropdown-btn:hover {
+    color: #d4af37 !important;
+  }
+
+  /* Close X */
+  .mobile-close-btn {
+    display: block !important;
+    position: absolute !important;
+    top: 16px !important;
+    right: 20px !important;
+    font-size: 36px !important;
+    line-height: 1 !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    color: #333 !important;
+    z-index: 1002 !important;
+  }
+
+  /* Dropdown inside mobile menu */
+  .dropdown {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    position: static !important;
+    height: auto !important;
+  }
+
+  .dropdown-content {
+    position: static !important;
+    display: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    box-shadow: none !important;
+    border-radius: 12px !important;
+    background: #f9f9f9 !important;
+    width: 80% !important;
+    text-align: center !important;
+    padding: 8px 0 !important;
+    min-width: unset !important;
+  }
+
+  .dropdown.open .dropdown-content {
+    display: block !important;
+  }
+
+  .dropdown-content a {
+    font-size: 16px !important;
+    padding: 12px 16px !important;
+    color: #444 !important;
+    font-weight: 500 !important;
+    display: block !important;
+  }
+
+  .dropdown-content a:hover {
+    color: #d4af37 !important;
+    background: #fff8e7 !important;
+  }
+
+  /* ── HERO ON MOBILE ── */
+  .hero-section {
+    height: 88vh !important;
+    min-height: 460px !important;
+  }
+
+  .hero-slide img,
+  .slide-image {
+    animation: none !important;
+  }
+
+  .hero-overlay {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 88% !important;
+    text-align: center !important;
+    z-index: 5 !important;
+    padding: 0 !important;
+  }
+
+  .hero-overlay h1 {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-overlay p {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 20px !important;
+    font-weight: 500 !important;
+  }
+
+  .hero-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .hero-buttons a,
+  .primary-btn,
+  .secondary-btn {
+    width: 85% !important;
+    max-width: 280px !important;
+    text-align: center !important;
+    padding: 14px 18px !important;
+    font-size: 15px !important;
+  }
+
+  .hero-arrow {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 17px !important;
+    z-index: 10 !important;
+  }
+
+  .left-arrow  { left: 8px !important; }
+  .right-arrow { right: 8px !important; }
+
+  /* ── ECO CARDS ── */
+  .ecosystem-section,
+  .business-ecosystem {
+    padding: 50px 18px !important;
+    width: 100% !important;
+  }
+
+  .ecosystem-grid {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+
+  .eco-card {
+    width: 100% !important;
+    border-radius: 22px !important;
+    overflow: hidden !important;
+  }
+
+  .eco-image {
+    width: 100% !important;
+    height: 220px !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .eco-image img,
+  .eco-card > img {
+    width: 100% !important;
+    height: 220px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 0 !important;
+  }
+
+  .eco-content {
+    padding: 20px 18px !important;
+  }
+
+  .eco-content h3 {
+    font-size: 22px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .eco-content h4 {
+    font-size: 16px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .eco-content p {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+  }
+
+  /* ── FOOTER FULL FIX ── */
+  .footer {
+    width: 100% !important;
+    padding: 48px 20px 28px !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+  }
+
+  .footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important;
+    width: 100% !important;
+  }
+
+  .footer-grid > div {
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+  .footer-grid h2 {
+    font-size: 22px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .footer-grid h3 {
+    font-size: 18px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .footer-grid p,
+  .footer-links a {
+    font-size: 14px !important;
+    line-height: 1.9 !important;
+    display: block !important;
+    margin-bottom: 6px !important;
+  }
+
+  .social-links {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    justify-content: flex-start !important;
+    margin-top: 14px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .social-links a {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 18px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .footer-bottom {
+    margin-top: 28px !important;
+    font-size: 12px !important;
+    text-align: center !important;
+  }
+
+}
+
+/* ── Very small phones ── */
+@media screen and (max-width: 480px) {
+
+  .hero-section {
+    height: 80vh !important;
+    min-height: 400px !important;
+  }
+
+  .hero-overlay h1 {
+    font-size: 22px !important;
+  }
+
+  .eco-image,
+  .eco-image img,
+  .eco-card > img {
+    height: 180px !important;
+  }
+
+}
