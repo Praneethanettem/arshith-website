@@ -1,8 +1,6 @@
 
 import { useState, useEffect } from "react";
 
-import arshithlogo from "../assets/logo/arshithlogo.png";
-
 import freshbanner from "../assets/herobanners/freshbanner.png";
 import infotechbanner from "../assets/herobanners/infotechbanner.png";
 import suntechbanner from "../assets/herobanners/suntechbanner.jpg";
@@ -47,8 +45,7 @@ import nagarjunahiring from "../assets/news/Nagarjuna hiring.jpeg";
 import news4 from "../assets/news/news4.jpeg";
 import latestupdate from "../assets/news/latestupdate (2).jpeg";
 
-
-
+import Navbar from "../components/Navbar";
 
 
 import {
@@ -244,116 +241,10 @@ const companyImages = [
   return (
 
     <>
+     <Navbar />
     <div className="scroll-progress"></div>
 
-      {/* NAVBAR */}
 
-     <nav className="navbar">
-
-  <div className="nav-logo">
-
-   <img
-  src={arshithlogo}
-  alt="Arshith Group Logo"
-/>
-
-  </div>
-
-  <div className="nav-links">
-
-    <Link to="/">
-      Home
-    </Link>
-
-    <Link to="/about">
-      About Us
-    </Link>
-
-    <div className="dropdown">
-
-      <button className="dropdown-btn">
-        Businesses ▾
-      </button>
-
-      <div className="dropdown-content">
-
-        <a
-          href="https://arshithfresh.com/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          E-Commerce
-        </a>
-
-        <a
-          href="https://suntechorganization.com/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Digital Marketing
-        </a>
-
-        <a
-          href="https://suntechorganization.com/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Software Development
-        </a>
-
-        <a
-          href="https://suntechorganization.com/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          IT Consulting
-        </a>
-
-        <a
-          href="https://suntechorganization.com/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Backend Support
-        </a>
-
-      </div>
-
-    </div>
-
-    <div className="dropdown">
-
-      <button className="dropdown-btn">
-        Careers ▾
-      </button>
-
-      <div className="dropdown-content">
-
-        <Link to="/careers">
-          Internships
-        </Link>
-
-        <Link to="/careers">
-          Job Opportunities
-        </Link>
-
-        <Link to="/careers">
-          Work Culture
-        </Link>
-
-      </div>
-
-    </div>
-
-    <Link to="/latestupdates">
-      News
-    </Link>
-
-    <Link to="/contact">
-      Contact Us
-    </Link>
-  </div>
-</nav>
       {/* HERO */}
      <section
   className="hero-section"
