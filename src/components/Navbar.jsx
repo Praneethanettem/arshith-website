@@ -92,10 +92,7 @@ function Navbar() {
 
         <div className={`dropdown${careersOpen ? " open" : ""}`}>
           <button className="dropdown-btn"
-           onClick={() => {
-  setCareersOpen(!careersOpen);
-  setBusinessOpen(false);
-}} >
+           onClick={() => setCareersOpen(!careersOpen)} >
             Careers ▾
           </button>
           <div className="dropdown-content">

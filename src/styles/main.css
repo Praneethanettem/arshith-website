@@ -13347,3 +13347,51 @@ body,
   }
 
 } 
+@media (max-width: 768px) {
+
+  .footer-grid > div:nth-child(4) {
+    transform: translateX(-35px) !important;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+
+    text-align: center !important;
+
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .footer-grid > div:first-child h2,
+  .footer-grid > div:first-child p {
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .social-links {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .footer-grid {
+    grid-template-columns: 55% 45% !important;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .footer-grid > div:nth-child(4) {
+    margin-left: -60px !important;
+  }
+
+}
