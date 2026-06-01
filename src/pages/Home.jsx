@@ -169,23 +169,29 @@ const homeNews = [
 
 ];
 const [currentSlide, setCurrentSlide] = useState(0);
+
 const [currentCompanyImage, setCurrentCompanyImage] = useState(0);
+
 useEffect(() => {
-
   const companyInterval = setInterval(() => {
-
     setCurrentCompanyImage((prev) =>
-
-      prev === companyImages.length - 1
-        ? 0
-        : prev + 1
-
+      prev === companyImages.length - 1 ? 0 : prev + 1
     );
-
   }, 3000);
 
   return () => clearInterval(companyInterval);
+}, []);
 
+/* ADD THIS BELOW */
+
+useEffect(() => {
+  const slideInterval = setInterval(() => {
+    setCurrentSlide((prev) =>
+      prev === slides.length - 1 ? 0 : prev + 1
+    );
+  }, 3000);
+
+  return () => clearInterval(slideInterval);
 }, []);
  const services = [
   {

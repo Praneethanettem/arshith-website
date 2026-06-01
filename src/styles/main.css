@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 html,body{
   width:100%;
   overflow-x:hidden;
@@ -225,9 +226,10 @@ body{
 
 .hero-section{
   height:100vh;
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
+   background-size: cover;
+background-position: right center;
+background-position: 70% center;
+  background-repeat: no-repeat;
   position:relative;
   display:flex;
   align-items:center;
@@ -10856,6 +10858,764 @@ html{
 
   .about-overlay p {
     font-size: 14px !important;
+  }
+
+}
+/* ================================================================
+   ARSHITH GROUPS - COMPLETE MOBILE FIX
+   Paste at VERY BOTTOM of main.css
+   ================================================================ */
+
+/* ================================================================
+   1. HERO SLIDER - empty space, cut images, misalignment
+   ================================================================ */
+
+/* Force the slider wrapper to never overflow */
+.hero-section,
+.hero-slide,
+.slider-container {
+  overflow: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+}
+
+/* Fix all slides stacking and causing extra width */
+.hero-section {
+  position: relative !important;
+  width: 100% !important;
+}
+
+.hero-slide {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Make sure inactive slides don't push layout */
+.hero-slide img,
+.slide-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block !important;
+}
+
+@media screen and (max-width: 768px) {
+
+  /* ── SLIDER EMPTY SPACE FIX ── */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  .hero-section {
+    height: 88vh !important;
+    min-height: 480px !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .hero-slide {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .hero-slide img,
+  .slide-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    animation: none !important; /* stop zoom causing overflow */
+  }
+
+  /* slider glow effect causing horizontal scroll */
+  .glow-effect {
+    display: none !important;
+  }
+
+  /* Hero overlay - center content properly */
+  .hero-overlay {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 88% !important;
+    text-align: center !important;
+    z-index: 5 !important;
+    padding: 0 !important;
+  }
+
+  .hero-overlay h1 {
+    font-size: 30px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .hero-overlay p {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 22px !important;
+    font-weight: 500 !important;
+  }
+
+  .hero-tag {
+    font-size: 12px !important;
+    padding: 9px 18px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .hero-buttons {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .hero-buttons a,
+  .primary-btn,
+  .secondary-btn {
+    width: 85% !important;
+    max-width: 280px !important;
+    text-align: center !important;
+    padding: 14px 18px !important;
+    font-size: 15px !important;
+  }
+
+  /* Arrow buttons */
+  .hero-arrow {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 18px !important;
+    z-index: 10 !important;
+  }
+
+  .left-arrow  { left: 10px !important; }
+  .right-arrow { right: 10px !important; }
+
+
+  /* ================================================================
+     2. VALUE CARD ICONS - too large on mobile
+     ================================================================ */
+
+  .value-card {
+    padding: 28px 16px !important;
+  }
+
+  .value-card img {
+    width: 55px !important;
+    height: 55px !important;
+    margin-bottom: 14px !important;
+    animation: none !important;
+  }
+
+  .value-card h3 {
+    font-size: 16px !important;
+    margin-top: 10px !important;
+  }
+
+  /* tech icons */
+  .tech-icon img {
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  .tech-icon {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 16px !important;
+  }
+
+  /* experience icon */
+  .experience-icon {
+    width: 65px !important;
+    height: 65px !important;
+    font-size: 26px !important;
+  }
+
+
+  /* ================================================================
+     3. FOOTER - complete mobile redesign
+     ================================================================ */
+
+  .footer {
+    padding: 48px 18px 28px !important;
+  }
+
+  .footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 36px !important;
+    text-align: center !important;
+  }
+
+  /* each footer column full width */
+  .footer-grid > div,
+  .footer-column {
+    width: 100% !important;
+  }
+
+  .footer-grid h2 {
+    font-size: 26px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .footer-grid h3 {
+    font-size: 20px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .footer-grid p,
+  .footer-links a {
+    font-size: 14px !important;
+    line-height: 1.9 !important;
+  }
+
+  .social-links {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 14px !important;
+    margin-top: 18px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .social-links a {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 20px !important;
+  }
+
+  .footer-bottom {
+    margin-top: 36px !important;
+    font-size: 13px !important;
+    padding-top: 20px !important;
+  }
+
+  /* career footer */
+  .career-footer-full {
+    padding: 44px 18px 24px !important;
+    text-align: center !important;
+  }
+
+  .career-footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+
+  .career-social-links {
+    justify-content: center !important;
+  }
+
+
+  /* ================================================================
+     4. ABOUT PAGE HERO - boxed instead of full width
+     ================================================================ */
+
+  .about-hero {
+    position: relative !important;
+    width: 100% !important;
+    height: 70vh !important;
+    min-height: 320px !important;
+    overflow: hidden !important;
+    border-radius: 0 !important; /* remove any box radius */
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .about-banner-image {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    animation: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* dark overlay for readability */
+  .about-hero::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: rgba(0,0,0,0.52) !important;
+    z-index: 2 !important;
+  }
+
+  .about-overlay {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 88% !important;
+    text-align: center !important;
+    z-index: 3 !important;
+    padding: 0 !important;
+  }
+
+  .about-overlay h1 {
+    font-size: 30px !important;
+    color: white !important;
+    line-height: 1.2 !important;
+    margin-bottom: 14px !important;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.7) !important;
+  }
+
+  .about-overlay p {
+    font-size: 14px !important;
+    color: #f0f0f0 !important;
+    line-height: 1.75 !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6) !important;
+  }
+
+  /* Remove gap after about hero */
+  .about-hero + * {
+    margin-top: 0 !important;
+  }
+
+  /* about section below hero */
+  .about-section,
+  .story-section {
+    padding: 48px 18px !important;
+  }
+
+
+  /* ================================================================
+     5. LEADERSHIP SECTION - LinkedIn/Instagram icons side by side
+     ================================================================ */
+
+  .leader-links {
+    display: flex !important;
+    flex-direction: row !important;   /* force side by side */
+    align-items: center !important;
+    gap: 14px !important;
+    flex-wrap: wrap !important;
+    margin-top: 20px !important;
+  }
+
+  .leader-links a {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 20px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* founder links same fix */
+  .founder-links {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 14px !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    margin-top: 18px !important;
+  }
+
+  .linkedin-btn,
+  .insta-btn {
+    padding: 12px 22px !important;
+    font-size: 14px !important;
+  }
+
+
+  /* ================================================================
+     6. INTERNSHIP PAGE - slow scrollbar & details hero fix
+     ================================================================ */
+
+  /* Smooth scroll on mobile webkit */
+  * {
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .home-news-scroll,
+  .gallery-scroll {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scroll-snap-type: x mandatory !important;
+  }
+
+  .home-news-card,
+  .gallery-scroll img {
+    scroll-snap-align: start !important;
+  }
+
+  /* Internship details hero */
+  .details-hero-section {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 85vh !important;
+    overflow: hidden !important;
+  }
+
+  .details-hero-bg {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    animation: none !important;
+  }
+
+  .details-hero-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 20px 18px !important;
+  }
+
+  .details-hero-content {
+    max-width: 100% !important;
+    width: 100% !important;
+    text-align: center !important;
+    z-index: 2 !important;
+    position: relative !important;
+  }
+
+  .details-hero-content h1 {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 14px !important;
+    color: white !important;
+  }
+
+  .details-hero-content p {
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+    margin-bottom: 26px !important;
+    color: #f3f3f3 !important;
+  }
+
+  .details-hero-buttons {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .details-hero-buttons a {
+    width: 85% !important;
+    max-width: 280px !important;
+    text-align: center !important;
+    padding: 14px 18px !important;
+    font-size: 15px !important;
+  }
+
+
+  /* ================================================================
+     7. VALUES GRID - fix 5-col to 2-col on mobile
+     ================================================================ */
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+
+  /* ================================================================
+     8. SERVICES GRID - cards not cut
+     ================================================================ */
+
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .service-card {
+    height: 300px !important;
+  }
+
+  .service-overlay h3 {
+    font-size: 22px !important;
+  }
+
+  .service-overlay p {
+    font-size: 13px !important;
+  }
+
+
+  /* ================================================================
+     9. CORE FOUNDATIONS / VALUES SECTION - image icon too large
+     ================================================================ */
+
+  .values-section {
+    padding: 50px 18px !important;
+  }
+
+  .values-section h2 {
+    font-size: 28px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .values-section > p {
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+    margin-bottom: 30px !important;
+  }
+
+
+  /* ================================================================
+     10. NAVBAR - cut off on left side (Image 1 shows "bout Us")
+     ================================================================ */
+
+  .navbar {
+    padding: 14px 16px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .nav-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px 16px !important;
+    width: 100% !important;
+  }
+
+  .nav-links a,
+  .dropdown button {
+    font-size: 14px !important;
+    white-space: nowrap !important;
+  }
+
+  .logo img,
+  .nav-logo img {
+    height: 48px !important;
+    width: auto !important;
+  }
+
+}
+
+/* ── 480px and below ── */
+@media screen and (max-width: 480px) {
+
+  .hero-section {
+    height: 80vh !important;
+  }
+
+  .hero-overlay h1 {
+    font-size: 24px !important;
+  }
+
+  .about-overlay h1 {
+    font-size: 24px !important;
+  }
+
+  .details-hero-content h1 {
+    font-size: 22px !important;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .value-card img {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .value-card h3 {
+    font-size: 13px !important;
+  }
+
+  .footer-grid h2 {
+    font-size: 22px !important;
+  }
+
+  .social-links a {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 17px !important;
+  }
+
+}
+/* ================================================================
+   SLIDER COMPLETE FIX - CSS ONLY
+   Paste at VERY BOTTOM of main.css
+   ================================================================ */
+
+/* ── GLOBAL OVERFLOW FIX (stops horizontal scroll) ── */
+html,
+body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+
+/* ================================================================
+   HERO SLIDER - empty space, cut images, misalignment
+   ================================================================ */
+
+/* Wrapper */
+.hero-section {
+  position: relative !important;
+  width: 100% !important;
+  overflow: hidden !important;
+}
+
+/* Every slide sits on top of each other, not side by side */
+.hero-slide {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+/* Images fill the slide completely */
+.hero-slide img,
+.slide-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block !important;
+}
+
+/* Glow effect was causing horizontal overflow — hide it */
+.glow-effect {
+  display: none !important;
+}
+
+/* ================================================================
+   MOBILE SPECIFIC SLIDER FIXES
+   ================================================================ */
+
+@media screen and (max-width: 768px) {
+
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  /* Hero section fixed height on mobile */
+  .hero-section {
+    height: 88vh !important;
+    min-height: 460px !important;
+    width: 100vw !important;
+    overflow: hidden !important;
+  }
+
+  /* Slides fill the section */
+  .hero-slide {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* Images - no zoom animation on mobile (zoom causes overflow) */
+  .hero-slide img,
+  .slide-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    animation: none !important;
+  }
+
+  /* Stop glow pushing width */
+  .glow-effect {
+    display: none !important;
+  }
+
+  /* Overlay centered properly */
+  .hero-overlay {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 88% !important;
+    text-align: center !important;
+    z-index: 5 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Text sizes */
+  .hero-overlay h1 {
+    font-size: 30px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .hero-overlay p {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 20px !important;
+    font-weight: 500 !important;
+  }
+
+  .hero-tag {
+    font-size: 12px !important;
+    padding: 9px 18px !important;
+    margin-bottom: 14px !important;
+    display: inline-block !important;
+  }
+
+  /* Buttons stacked on mobile */
+  .hero-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    justify-content: center !important;
+  }
+
+  .hero-buttons a,
+  .primary-btn,
+  .secondary-btn {
+    width: 85% !important;
+    max-width: 280px !important;
+    text-align: center !important;
+    padding: 14px 18px !important;
+    font-size: 15px !important;
+  }
+
+  /* Arrow buttons stay visible and clickable */
+  .hero-arrow {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 18px !important;
+    z-index: 10 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+
+  .left-arrow  { left: 10px !important; }
+  .right-arrow { right: 10px !important; }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .hero-section {
+    height: 80vh !important;
+    min-height: 400px !important;
+  }
+
+  .hero-overlay h1 {
+    font-size: 24px !important;
+  }
+
+  .hero-overlay p {
+    font-size: 13px !important;
   }
 
 }
