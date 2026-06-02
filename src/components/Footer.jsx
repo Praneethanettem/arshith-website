@@ -2,43 +2,68 @@ import logo from "../assets/logo/arshithlogo.png";
 
 function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer-grid">
-        <div>
-          <img src={logo} alt="logo" className="footer-logo" />
+<footer className="footer">
+  <div className="footer-grid">
 
-          <p>
-            Arshith Group is committed to innovation, technology and
-            sustainable business growth.
-          </p>
-        </div>
+    {/* ROW 1: Arshith Group - centered */}
+    <div>
+      <h2>Arshith Group</h2>
+      <p>
+        Arshith Group is committed to innovation,
+        sustainability and excellence across multiple
+        industries including E-Commerce, Technology
+        and Digital Services.
+      </p>
+      <div className="social-links">
+        <a href="https://www.instagram.com/farook_suntech_arshith" target="_blank" rel="noreferrer"><FaInstagram /></a>
+        <a href="https://www.linkedin.com/company/arshith-fresh-india-pvt-ltd/" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+        <a href="#"><FaYoutube /></a>
+        <a href="https://www.linkedin.com/in/farook-n-2bb2b5344" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+        <a href="#"><FaWhatsapp /></a>
+      </div>
+    </div>
 
-        <div>
-          <h3>About</h3>
-          <p>About Us</p>
-          <p>Leadership</p>
-          <p>Our Journey</p>
-        </div>
+    {/* ROW 2: About Us + Businesses side by side (wrapped) */}
+    <div className="footer-row-2">
 
-        <div>
-          <h3>Businesses</h3>
-          <p>IT Consulting</p>
-          <p>Digital Marketing</p>
-          <p>Software Development</p>
-        </div>
-
-        <div>
-          <h3>Connect</h3>
-          <p>Careers</p>
-          <p>News</p>
-          <p>Contact Us</p>
-        </div>
+      {/* About Us */}
+      <div className="footer-links">
+        <h3>About Us</h3>
+        <Link to="/about#companies">CEO Office</Link>
+        <Link to="/about#leadership">Leadership</Link>
+        <Link to="/about#journey">Our Journey</Link>
+        <Link to="/about#awards">Awards</Link>
       </div>
 
-      <div className="footer-bottom">
-        © 2026 Arshith Group. Building Innovation Across Industries.
+      {/* Businesses */}
+      <div className="footer-links">
+        <h3>Businesses</h3>
+        <p>E-Commerce</p>
+        <p>Business Consulting</p>
+        <p>Digital Marketing</p>
+        <p>Software Development</p>
       </div>
-    </footer>
+
+    </div>
+
+    {/* ROW 3: Connect */}
+    <div className="footer-links">
+      <h3>Connect</h3>
+      <Link to="/about">About Us</Link>
+      <Link to="/latestupdates">News</Link>
+      <Link to="/">Business</Link>
+      <Link to="/careers">Careers</Link>
+      <Link to="/contact">Contact Us</Link>
+    </div>
+
+  </div>
+<div className="footer-made">
+  Made with <span>♥</span> by Arshith Group Team
+</div>
+  <div className="footer-bottom">
+    © 2026 Arshith Group. Building Innovation Across Industries.
+  </div>
+</footer>
   );
 }
 

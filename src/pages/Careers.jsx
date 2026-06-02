@@ -138,7 +138,10 @@ const handleSubmit = async (e) => {
       <Navbar />
 
 
-<section className="careers-hero">
+<section
+  className="careers-hero"
+  data-aos="zoom-in"
+>
 
   <div className="hero-slider">
 
@@ -172,13 +175,13 @@ const handleSubmit = async (e) => {
 
     <div className="hero-content">
 
-      <div className="hero-badge">
+     {/* 
+<div className="hero-badge">
+  🚀 Front-End Developer Internship Program
+</div>
+*/}
 
-        🚀 Front-End Developer Internship Program
-
-      </div>
-
-      <h1>
+      <h1 data-aos="fade-up">
 
   Front-End Developer
   <span>
@@ -187,7 +190,10 @@ const handleSubmit = async (e) => {
 
 </h1>
 
-      <p>
+      <p
+  data-aos="fade-up"
+  data-aos-delay="200"
+>
 
         Build modern responsive interfaces,
         work on real-time projects and
@@ -197,7 +203,11 @@ const handleSubmit = async (e) => {
 
       </p>
 
-      <div className="hero-buttons">
+     <div
+  className="hero-buttons"
+  data-aos="fade-up"
+  data-aos-delay="400"
+>
 
         <Link to="/internship-details#internship-form">
   Apply Now →
@@ -300,7 +310,10 @@ const handleSubmit = async (e) => {
 
       {/* PROFESSIONAL LEARNING EXPERIENCE */}
 
-<section className="overview-section">
+<section
+  className="overview-section"
+  data-aos="fade-up"
+>
 
   <div className="overview-heading">
 
@@ -323,7 +336,11 @@ const handleSubmit = async (e) => {
 
     {/* CARD 1 */}
 
-    <div className="overview-card">
+  <div
+  className="overview-card"
+  data-aos="zoom-in-up"
+  data-aos-delay="100"
+>
 
       <span>
         01
@@ -347,7 +364,11 @@ const handleSubmit = async (e) => {
 
     {/* CARD 2 */}
 
-    <div className="overview-card">
+    <div
+  className="overview-card"
+  data-aos="zoom-in-up"
+  data-aos-delay="200"
+>
 
       <span>
         02
@@ -370,7 +391,11 @@ const handleSubmit = async (e) => {
 
     {/* CARD 3 */}
 
-    <div className="overview-card">
+   <div
+  className="overview-card"
+  data-aos="zoom-in-up"
+  data-aos-delay="300"
+>
 
       <span>
         03
@@ -399,8 +424,10 @@ const handleSubmit = async (e) => {
       {/* INTERNSHIPS */}
 
      {/* ================= WHAT YOU WILL GAIN ================= */}
-
-<section className="gain-section">
+<section
+  className="gain-section"
+  data-aos="fade-up"
+>
 
   <div className="gain-heading">
 
@@ -422,7 +449,10 @@ const handleSubmit = async (e) => {
 
     {/* CARD 1 */}
 
-    <div className="gain-card">
+    <div
+  className="gain-card"
+  data-aos="flip-left"
+>
 
       <img
         src={frontend}
@@ -511,7 +541,10 @@ const handleSubmit = async (e) => {
 
       {/* ================= TOOLS & TECHNOLOGIES ================= */}
 
-<section className="tech-section">
+<section
+  className="tech-section"
+  data-aos="fade-up"
+>
 
   <div className="tech-heading">
 
@@ -534,7 +567,10 @@ const handleSubmit = async (e) => {
 
     {/* HTML */}
 
-    <div className="tech-card">
+    <div
+  className="tech-card"
+  data-aos="zoom-in"
+>
 
       <img
         src={htmlicon}
@@ -553,7 +589,10 @@ const handleSubmit = async (e) => {
 
     {/* CSS */}
 
-    <div className="tech-card">
+    <div
+  className="tech-card"
+  data-aos="zoom-in"
+>
 
       <img
         src={cssicon}
@@ -572,7 +611,10 @@ const handleSubmit = async (e) => {
 
     {/* JS */}
 
-    <div className="tech-card">
+   <div
+  className="tech-card"
+  data-aos="zoom-in"
+>
 
       <img
         src={javascripticon}
@@ -591,7 +633,10 @@ const handleSubmit = async (e) => {
 
     {/* REACT */}
 
-    <div className="tech-card">
+    <div
+  className="tech-card"
+  data-aos="zoom-in"
+>
 
       <img
         src={reacticon}
@@ -610,7 +655,10 @@ const handleSubmit = async (e) => {
 
     {/* GITHUB */}
 
-    <div className="tech-card">
+   <div
+  className="tech-card"
+  data-aos="zoom-in"
+>
 
       <img
         src={githubicon}
@@ -629,7 +677,10 @@ const handleSubmit = async (e) => {
 
     {/* VS CODE */}
 
-    <div className="tech-card">
+    <div
+  className="tech-card"
+  data-aos="zoom-in"
+>
 
       <img
         src={vscodeicon}
@@ -648,7 +699,10 @@ const handleSubmit = async (e) => {
 
     {/* EXTRA */}
 
-    <div className="tech-card extra-tech">
+   <div
+  className="tech-card"
+  data-aos="zoom-in"
+>
 
       <img
         src={reacticon}
@@ -665,7 +719,10 @@ const handleSubmit = async (e) => {
 
     </div>
 
-    <div className="tech-card extra-tech">
+   <div
+  className="tech-card"
+  data-aos="zoom-in"
+>
 
       <img
         src={githubicon}
@@ -690,7 +747,10 @@ const handleSubmit = async (e) => {
 
     {/* ================= INTERNSHIP PLANS ================= */}
 
-<section className="plans-section">
+<section
+  className="plans-section"
+  data-aos="fade-up"
+>
 
   <div className="plans-heading">
 
@@ -712,7 +772,10 @@ const handleSubmit = async (e) => {
   <div className="plans-grid">
 
     {/* 3 MONTHS */}
-  <div className="plan-card">
+ <div
+  className="plan-card"
+  data-aos="fade-right"
+>
 
       <div className="plan-badge">
         3 Months
@@ -792,7 +855,10 @@ const handleSubmit = async (e) => {
 
     {/* 6 MONTHS */}
 
-    <div className="plan-card advanced-plan">
+   <div
+  className="plan-card advanced-plan"
+  data-aos="fade-left"
+>
 
       <div className="plan-badge">
         6 Months
@@ -886,7 +952,10 @@ const handleSubmit = async (e) => {
 
 {/* ================= BENEFITS SECTION ================= */}
 
-<section className="benefits-section">
+<section
+  className="benefits-section"
+  data-aos="fade-up"
+>
 
   <div className="benefits-heading">
 
@@ -987,7 +1056,10 @@ const handleSubmit = async (e) => {
 
       {/* MORE OPPORTUNITIES */}
 
-      <section className="more-opportunities workspace-bg">
+      <section
+  className="more-opportunities workspace-bg"
+  data-aos="zoom-in"
+>
 
         <div className="more-content">
 
@@ -1043,7 +1115,10 @@ const handleSubmit = async (e) => {
 
   {/* LEFT IMAGE */}
 
-  <div className="career-opportunity-image">
+  <div
+  className="career-opportunity-image"
+  data-aos="fade-right"
+>
 
     <img
       src={internshipposter}
@@ -1054,7 +1129,10 @@ const handleSubmit = async (e) => {
 
   {/* RIGHT CONTENT */}
 
-  <div className="career-opportunity-content">
+ <div
+  className="career-opportunity-content"
+  data-aos="fade-left"
+>
 
     <h2>
       Launch Your Career Journey
@@ -1188,7 +1266,10 @@ const handleSubmit = async (e) => {
       </section>
       {/* ================= FINAL CTA SECTION ================= */}
 
-<section className="final-cta-section">
+<section
+  className="final-cta-section"
+  data-aos="zoom-in"
+>
 
   <img
     src={reactdev}
@@ -1240,10 +1321,10 @@ const handleSubmit = async (e) => {
       {/* CULTURE */}
 
       <section
-        className="culture-section"
-        id="culture"
-      >
-
+  className="culture-section"
+  id="culture"
+  data-aos="fade-up"
+>
         <div className="section-title">
 
           <h2>
@@ -1258,7 +1339,10 @@ const handleSubmit = async (e) => {
 
         <div className="culture-grid">
 
-          <div className="culture-box">
+          <div
+  className="culture-box"
+  data-aos="flip-up"
+>
 
             <h3>
               Innovation
@@ -1273,7 +1357,10 @@ const handleSubmit = async (e) => {
 
           </div>
 
-          <div className="culture-box">
+         <div
+  className="culture-box"
+  data-aos="flip-up"
+>
 
             <h3>
               Collaboration
@@ -1288,7 +1375,10 @@ const handleSubmit = async (e) => {
 
           </div>
 
-          <div className="culture-box">
+         <div
+  className="culture-box"
+  data-aos="flip-up"
+>
 
             <h3>
               Professional Growth
@@ -1309,148 +1399,68 @@ const handleSubmit = async (e) => {
 
      {/* FOOTER */}
 
-<footer className="footer">
 
+<footer className="footer">
   <div className="footer-grid">
 
-    {/* COLUMN 1 */}
-
+    {/* ROW 1: Arshith Group - centered */}
     <div>
-
-      <h2>
-        Arshith Group
-      </h2>
-
+      <h2>Arshith Group</h2>
       <p>
-
         Arshith Group is committed to innovation,
         sustainability and excellence across multiple
         industries including E-Commerce, Technology
         and Digital Services.
-
       </p>
-
       <div className="social-links">
+        <a href="https://www.instagram.com/farook_suntech_arshith" target="_blank" rel="noreferrer"><FaInstagram /></a>
+        <a href="https://www.linkedin.com/company/arshith-fresh-india-pvt-ltd/" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+        <a href="#"><FaYoutube /></a>
+        <a href="https://www.linkedin.com/in/farook-n-2bb2b5344" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+        <a href="#"><FaWhatsapp /></a>
+      </div>
+    </div>
 
-        <a
-          href="https://www.instagram.com/farook_suntech_arshith?igsh=MW1mYW05MDAwb3JwbQ=="
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaInstagram />
-        </a>
+    {/* ROW 2: About Us + Businesses side by side (wrapped) */}
+    <div className="footer-row-2">
 
-        <a
-          href="https://www.linkedin.com/company/arshith-fresh-india-pvt-ltd/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaLinkedin />
-        </a>
+      {/* About Us */}
+      <div className="footer-links">
+        <h3>About Us</h3>
+        <Link to="/about#companies">CEO Office</Link>
+        <Link to="/about#leadership">Leadership</Link>
+        <Link to="/about#journey">Our Journey</Link>
+        <Link to="/about#awards">Awards</Link>
+      </div>
 
-        <a href="#">
-          <FaYoutube />
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/farook-n-2bb2b5344?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaLinkedin />
-        </a>
-
-        <a href="#">
-          <FaWhatsapp />
-        </a>
-
+      {/* Businesses */}
+      <div className="footer-links">
+        <h3>Businesses</h3>
+        <p>E-Commerce</p>
+        <p>Business Consulting</p>
+        <p>Digital Marketing</p>
+        <p>Software Development</p>
       </div>
 
     </div>
 
-    {/* COLUMN 2 */}
-
+    {/* ROW 3: Connect */}
     <div className="footer-links">
-
-      <h3>
-        About Us
-      </h3>
-
-      <Link to="/about#companies">
-        CEO Office
-      </Link>
-
-      <Link to="/about#leadership">
-        Leadership
-      </Link>
-
-      <Link to="/about#journey">
-        Our Journey
-      </Link>
-
-      <Link to="/about#awards">
-        Awards
-      </Link>
-
+      <h3>Connect</h3>
+      <Link to="/about">About Us</Link>
+      <Link to="/latestupdates">News</Link>
+      <Link to="/">Business</Link>
+      <Link to="/careers">Careers</Link>
+      <Link to="/contact">Contact Us</Link>
     </div>
 
-    {/* COLUMN 3 */}
-
-   <div className="footer-links">
-
-  <h3>
-    Businesses
-  </h3>
-
-  <p>E-Commerce</p>
-
-  <p>Business Consulting</p>
-
-  <p>Digital Marketing</p>
-
-  <p>Software Development</p>
-
+  </div>
+<div className="footer-made">
+  Made with <span>♥</span> by Arshith Group Team
 </div>
-
-    {/* COLUMN 4 */}
-
-    <div className="footer-links">
-
-      <h3>
-        Connect
-      </h3>
-
-      <Link to="/about">
-        About Us
-      </Link>
-
-      <Link to="/latestupdates">
-        News
-      </Link>
-
-      <Link to="/">
-        Business
-      </Link>
-
-      <Link to="/careers">
-        Careers
-      </Link>
-
-      <Link to="/contact">
-        Contact Us
-      </Link>
-
-    </div>
-
-  </div>
-
   <div className="footer-bottom">
-
-    © 2026 Arshith Group.
-    Building Innovation Across Industries.
-
+    © 2026 Arshith Group. Building Innovation Across Industries.
   </div>
-
 </footer>
 
     </>

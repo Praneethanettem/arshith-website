@@ -7,8 +7,10 @@ import {
   FaYoutube,
   FaWhatsapp
 } from "react-icons/fa";
+import { useState, useEffect } from "react";
 
 import aboutbanner from "../assets/about/aboutbanner.avif";
+import aboutbanner1 from "../assets/about/aboutbanner1.jpeg";
 import grouppic from "../assets/about/grouppic.png";
 import vision from "../assets/about/vision.jpg";
 import mission from "../assets/about/mission.jpg";
@@ -23,7 +25,17 @@ import { Link } from "react-router-dom";
 
 import companyvideo from "../assets/video/companyvideo.mp4";
 function About() {
+const slides = [aboutbanner, aboutbanner1];
 
+const [currentSlide, setCurrentSlide] = useState(0);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  }, 3000);
+
+  return () => clearInterval(interval);
+}, []);
   return (
     <>
   <Navbar />
@@ -36,20 +48,17 @@ function About() {
       <section className="about-hero" data-aos="fade-up">
 
         <img
-          src={aboutbanner}
-          alt=""
-          className="about-banner-image"
-        />
+  src={slides[currentSlide]}
+  alt="About Banner"
+  className="about-banner-image"
+/>
 
         <div className="about-overlay">
+          
+         <h1 data-aos="fade-up">About Arshith Group</h1>
 
-          <h1>
-            About Arshith Group
-          </h1>
-
-          <p>
-
-            Arshith Group is a growing ecosystem
+<p data-aos="fade-up" data-aos-delay="200">
+   Arshith Group is a growing ecosystem
             powered by innovation, technology
             and customer-focused solutions.
 
@@ -58,8 +67,26 @@ function About() {
             to empower businesses with
             digital transformation and
             scalable modern solutions.
+</p>
+<div className="about-stats">
 
-          </p>
+  <div className="stat-box">
+    <h3>3+</h3>
+    <span>Business Ventures</span>
+  </div>
+
+  <div className="stat-box">
+    <h3>450+</h3>
+    <span>Students Trained</span>
+  </div>
+
+  <div className="stat-box">
+    <h3>150+</h3>
+    <span>Projects Delivered</span>
+  </div>
+
+</div>
+
 
         </div>
 
@@ -667,147 +694,66 @@ data-aos="zoom-in"
       {/* FOOTER */}
 
 <footer className="footer">
-
   <div className="footer-grid">
 
-    {/* COLUMN 1 */}
-
+    {/* ROW 1: Arshith Group - centered */}
     <div>
-
-      <h2>
-        Arshith Group
-      </h2>
-
+      <h2>Arshith Group</h2>
       <p>
-
         Arshith Group is committed to innovation,
         sustainability and excellence across multiple
         industries including E-Commerce, Technology
         and Digital Services.
-
       </p>
-
       <div className="social-links">
+        <a href="https://www.instagram.com/farook_suntech_arshith" target="_blank" rel="noreferrer"><FaInstagram /></a>
+        <a href="https://www.linkedin.com/company/arshith-fresh-india-pvt-ltd/" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+        <a href="#"><FaYoutube /></a>
+        <a href="https://www.linkedin.com/in/farook-n-2bb2b5344" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+        <a href="#"><FaWhatsapp /></a>
+      </div>
+    </div>
 
-        <a
-          href="https://www.instagram.com/farook_suntech_arshith?igsh=MW1mYW05MDAwb3JwbQ=="
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaInstagram />
-        </a>
+    {/* ROW 2: About Us + Businesses side by side (wrapped) */}
+    <div className="footer-row-2">
 
-        <a
-          href="https://www.linkedin.com/company/arshith-fresh-india-pvt-ltd/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaLinkedin />
-        </a>
+      {/* About Us */}
+      <div className="footer-links">
+        <h3>About Us</h3>
+        <Link to="/about#companies">CEO Office</Link>
+        <Link to="/about#leadership">Leadership</Link>
+        <Link to="/about#journey">Our Journey</Link>
+        <Link to="/about#awards">Awards</Link>
+      </div>
 
-        <a href="#">
-          <FaYoutube />
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/farook-n-2bb2b5344?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaLinkedin />
-        </a>
-
-        <a href="#">
-          <FaWhatsapp />
-        </a>
-
+      {/* Businesses */}
+      <div className="footer-links">
+        <h3>Businesses</h3>
+        <p>E-Commerce</p>
+        <p>Business Consulting</p>
+        <p>Digital Marketing</p>
+        <p>Software Development</p>
       </div>
 
     </div>
 
-    {/* COLUMN 2 */}
-
+    {/* ROW 3: Connect */}
     <div className="footer-links">
-
-      <h3>
-        About Us
-      </h3>
-
-      <Link to="/about#companies">
-        CEO Office
-      </Link>
-
-      <Link to="/about#leadership">
-        Leadership
-      </Link>
-
-      <Link to="/about#journey">
-        Our Journey
-      </Link>
-
-      <Link to="/about#awards">
-        Awards
-      </Link>
-
+      <h3>Connect</h3>
+      <Link to="/about">About Us</Link>
+      <Link to="/latestupdates">News</Link>
+      <Link to="/">Business</Link>
+      <Link to="/careers">Careers</Link>
+      <Link to="/contact">Contact Us</Link>
     </div>
 
-    {/* COLUMN 3 */}
-
-   <div className="footer-links">
-
-  <h3>
-    Businesses
-  </h3>
-
-  <p>E-Commerce</p>
-
-  <p>Business Consulting</p>
-
-  <p>Digital Marketing</p>
-
-  <p>Software Development</p>
-
+  </div>
+<div className="footer-made">
+  Made with <span>♥</span> by Arshith Group Team
 </div>
-
-    {/* COLUMN 4 */}
-
-    <div className="footer-links">
-
-      <h3>
-        Connect
-      </h3>
-
-      <Link to="/about">
-        About Us
-      </Link>
-
-      <Link to="/latestupdates">
-        News
-      </Link>
-
-      <Link to="/">
-        Business
-      </Link>
-
-      <Link to="/careers">
-        Careers
-      </Link>
-
-      <Link to="/contact">
-        Contact Us
-      </Link>
-
-    </div>
-
-  </div>
-
   <div className="footer-bottom">
-
-    © 2026 Arshith Group.
-    Building Innovation Across Industries.
-
+    © 2026 Arshith Group. Building Innovation Across Industries.
   </div>
-
 </footer>
     </>
 

@@ -1950,7 +1950,80 @@ body{
   object-fit:cover;
   animation:zoomBanner 8s infinite alternate;
 }
+.about-banner-image{
+  transition: opacity 1s ease-in-out;
+}
+.about-hero{
+  position:relative;
+  overflow:hidden;
+}
 
+.about-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.45)
+    );
+
+  z-index:1;
+}
+
+.about-overlay{
+  z-index:2;
+}
+.about-banner-image {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 768px) {
+  .about-overlay {
+    width: 90%;
+    padding: 25px;
+  }
+
+ .about-overlay h1 {
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 800;
+
+  text-shadow:
+    0 2px 8px rgba(0,0,0,0.5),
+    0 0 15px rgba(0,0,0,0.3);
+}
+ .about-overlay p {
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.8;
+
+  text-shadow:
+    0 2px 6px rgba(0,0,0,0.4);
+}
+}
+.about-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.15);
+
+  z-index: 1;
+}
+.about-overlay {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(4px);
+
+  padding: 20px;
+  border-radius: 16px;
+
+  width: 90%;
+  max-width: 500px;
+}
 @keyframes zoomBanner{
 
   from{
@@ -1963,6 +2036,10 @@ body{
 
 }
 
+.about-overlay{
+  width: 65%;
+  max-width: 900px;
+}
 .about-overlay{
   position:absolute;
   top:50%;
@@ -3173,7 +3250,7 @@ padding-top:20px;
 }
 
 .hero-content h1{
-  font-size:78px;
+  font-size:72px;
 
   line-height:1.05;
 
@@ -3190,7 +3267,7 @@ padding-top:20px;
 
   color:#00e0b0;
 
-  font-size:70px;
+  font-size:64px;
 
   margin-top:5px;
 
@@ -3367,26 +3444,19 @@ padding-top:20px;
 }
 
 .career-track{
+  display:inline-block;
   white-space:nowrap;
-
-  color:#021526;
-
-  font-size:22px;
-
-  font-weight:700;
-
-  animation:scrollTicker 22s linear infinite;
+  animation:scrollTicker 8s linear infinite;
 }
-@keyframes scrollTicker{
 
+@keyframes scrollTicker{
   from{
-    transform:translateX(100%);
+    transform:translateX(0);
   }
 
   to{
-    transform:translateX(-100%);
+    transform:translateX(-50%);
   }
-
 }
 
 /* ================= ANIMATIONS ================= */
@@ -3407,53 +3477,158 @@ padding-top:20px;
 
 /* ================= RESPONSIVE ================= */
 
-@media(max-width:1100px){
+  @media (max-width: 768px){
 
-  .floating-icons{
-    display:none;
+  .careers-hero{
+    min-height:100vh;
   }
-
-}
-
-@media(max-width:992px){
-
-  .hero-content{
-    margin-left:20px;
-  }
-
-  .hero-content h1{
-    font-size:56px;
-  }
-
-  .hero-content p{
-    font-size:20px;
-  }
-
-}
-
-@media(max-width:768px){
 
   .careers-overlay{
-    padding:40px;
+    padding:30px 20px;
+    justify-content:center;
+    align-items:center;
   }
 
   .hero-content{
-    margin-left:0;
+    position:relative;
+    left:auto;
+    top:auto;
+    transform:none;
+
+    width:100%;
+    max-width:100%;
+
+    text-align:center;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .hero-badge{
+    width:90%;
+    max-width:360px;
+
+    padding:14px 20px;
+
+    font-size:16px;
+
+    margin-bottom:25px;
+
+    text-align:center;
   }
 
   .hero-content h1{
-    font-size:42px;
+    font-size:3rem;
+    line-height:1.25;
+
+    text-align:center;
+
+    margin-bottom:20px;
+  }
+
+  .hero-content h1 span{
+    font-size:3rem;
+    display:block;
+    margin-top:8px;
   }
 
   .hero-content p{
-    font-size:18px;
+    font-size:1.1rem;
+    line-height:1.8;
+
+    text-align:center;
+
+    max-width:90%;
+
+    margin-bottom:30px;
+
+    color:white;
   }
 
   .hero-buttons{
+    width:100%;
+
+    display:flex;
     flex-direction:column;
+    align-items:center;
+
+    gap:16px;
   }
 
-}.news-hero{
+  .hero-buttons a{
+    width:85%;
+    max-width:320px;
+
+    text-align:center;
+
+    padding:16px 24px;
+
+    font-size:18px;
+  }
+
+  .floating-icons{
+    display:flex;
+
+    position:relative;
+
+    top:auto;
+    right:auto;
+
+    transform:none;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:25px;
+
+
+  @media (max-width:768px){
+
+  .floating-icons{
+    position:absolute !important;
+    left:50% !important;
+    bottom:120px !important;
+    top:auto !important;
+    right:auto !important;
+    transform:translateX(-50%) !important;
+
+    display:flex !important;
+    gap:12px !important;
+
+    z-index:999 !important;
+  }
+
+  
+
+  .tech-icon{
+    width:42px !important;
+    height:42px !important;
+  }
+
+  .tech-icon img{
+    width:22px !important;
+    height:22px !important;
+  }
+
+}
+}
+}
+.tech-icon{
+  width:50px;
+  height:50px;
+}
+
+.tech-icon img{
+  width:28px;
+  height:28px;
+}
+
+
+.news-hero{
 
   height:45vh;
 
@@ -9822,6 +9997,31 @@ html{
   padding:20px 10px;
   scroll-behavior:smooth;
 }
+.gallery-section{
+  overflow:hidden;
+  width:100%;
+}
+
+.gallery-scroll{
+  display:flex;
+  gap:20px;
+  width:max-content;
+
+  animation:galleryScroll 35s linear infinite;
+}
+
+.gallery-scroll img{
+  width:280px;
+  height:180px;
+  object-fit:cover;
+
+  border-radius:15px;
+
+  flex-shrink:0;
+}
+
+
+
 
 /* ================= MOBILE RESPONSIVE ================= */
 
@@ -13141,257 +13341,451 @@ body,
   }
 }
 
-/* ===== FINAL MOBILE FOOTER LAYOUT ===== */
+/* ================================================================
+   FOOTER MOBILE FIX - REPLACE ALL PREVIOUS FOOTER CSS
+   Paste at VERY BOTTOM of main.css
+   ================================================================ */
 
 @media (max-width: 768px) {
 
+  .footer {
+    padding: 44px 20px 28px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── GRID: full width, proper columns ── */
   .footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    width: 100% !important;
+    transform: none !important; /* remove any leftover transforms */
+  }
+
+  /* ── ROW 1: Arshith Group — centered ── */
+  .footer-grid > div:first-child {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    padding: 0 10px !important;
+    margin-bottom: 32px !important;
+    transform: none !important;
+  }
+
+  .footer-grid > div:first-child h2 {
+    font-size: 24px !important;
+    margin-bottom: 12px !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .footer-grid > div:first-child p {
+    font-size: 14px !important;
+    line-height: 1.8 !important;
+    color: #d1d5db !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 16px 0 !important;
+  }
+
+  .social-links {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 16px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .social-links a {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: white !important;
+    background: none !important;
+  }
+
+  /* ── ROW 2: About Us + Businesses side by side ── */
+  .footer-row-2 {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     gap: 20px !important;
     width: 100% !important;
+    margin-bottom: 28px !important;
   }
 
-  /* Arshith Group section full width */
-  .footer-grid > div:first-child {
-    grid-column: 1 / -1 !important;
-    margin-bottom: 10px !important;
-  }
-
-  /* About Us */
-  .footer-grid > div:nth-child(2) {
-    grid-column: 1 !important;
-  }
-
-  /* Connect */
+  /* ── ROW 3: Connect — full width ── */
   .footer-grid > div:nth-child(4) {
-    grid-column: 2 !important;
+    width: 100% !important;
+    transform: none !important;
+    margin-left: 0 !important;
+    padding-right: 0 !important;
   }
 
-  /* Businesses goes below */
-  .footer-grid > div:nth-child(3) {
-    grid-column: 1 / -1 !important;
-    margin-top: 10px !important;
+  /* All column headings */
+  .footer-grid h3,
+  .footer-links h3 {
+    font-size: 17px !important;
+    margin-bottom: 14px !important;
+    color: white !important;
+    font-weight: 700 !important;
   }
 
-  .footer-links,
-  .footer-grid > div {
-    text-align: left !important;
-  }
-
-  .footer-grid h3 {
-    font-size: 20px !important;
-    margin-bottom: 12px !important;
-  }
-
-  .footer-grid p,
-  .footer-links a {
+  /* All links */
+  .footer-links a,
+  .footer-grid .footer-links a {
     font-size: 14px !important;
-    line-height: 1.6 !important;
-    margin-bottom: 6px !important;
-  }
-}
-@media (max-width: 768px) {
-
-  /* About Us left */
-  .footer-grid > div:nth-child(2) {
-    grid-column: 1 !important;
-    grid-row: 2 !important;
-  }
-
-  /* Connect right beside About Us */
-  .footer-grid > div:nth-child(4) {
-    grid-column: 2 !important;
-    grid-row: 2 !important;
-
-    align-self: start !important;
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
-
-  /* Businesses below both */
-  .footer-grid > div:nth-child(3) {
-    grid-column: 1 / -1 !important;
-    grid-row: 3 !important;
-    margin-top: 15px !important;
-  }
-}
-@media (max-width: 768px) {
-
-  .footer-grid > div:nth-child(4) {
-    padding-right: 40px !important;
-  }
-
-}
-@media (max-width: 768px) {
-
-  .footer-grid > div:nth-child(4) {
-    transform: translateX(-20px) !important;
-  }
-
-}
-@media (max-width: 768px) {
-
-  /* Arshith Group section */
-  .footer-grid > div:first-child {
-    grid-column: 1 / -1 !important;
-    width: 100% !important;
-  }
-
-  .footer-grid > div:first-child p {
-    max-width: 100% !important;
-    width: 100% !important;
-    line-height: 1.8 !important;
-  }
-
-  .social-links {
-    justify-content: center !important;
-    width: 100% !important;
-    margin-top: 15px !important;
-  }
-
-}
-@media (max-width: 768px) {
-
-  .footer-grid > div:first-child {
-    text-align: center !important;
-  }
-
-  .footer-grid > div:first-child p {
-    max-width: 100% !important;
-    margin: 0 auto !important;
-  }
-
-}
-@media (max-width: 768px) {
-
-  /* Arshith Group section */
-  .footer-grid > div:first-child {
-    text-align: center !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-
-  /* Description */
-  .footer-grid > div:first-child p {
-    text-align: center !important;
-    width: 100% !important;
-    max-width: 320px !important;
-    margin: 0 auto 15px auto !important;
-    line-height: 1.8 !important;
-  }
-
-  /* Social Icons */
-  .social-links {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 18px !important;
-    width: 100% !important;
-    margin: 15px auto 0 auto !important;
-  }
-
-  .social-links a {
+    line-height: 1 !important;
+    color: #d1d5db !important;
+    display: block !important;
+    text-decoration: none !important;
+    padding: 7px 0 !important;
     margin: 0 !important;
+    white-space: nowrap !important; /* prevent wrapping */
   }
 
-}
-/* ===== PERFECT MOBILE FOOTER CENTER ===== */
-
-@media (max-width: 768px) {
-
-  .footer-grid > div:first-child {
-    grid-column: 1 / -1 !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-
-    text-align: center !important;
-
-    width: 100% !important;
-    padding: 0 15px !important;
+  .footer-links a:hover {
+    color: #d4af37 !important;
   }
 
-  .footer-grid > div:first-child h2 {
-    text-align: center !important;
-    width: 100% !important;
-    margin-bottom: 15px !important;
-  }
-
-  .footer-grid > div:first-child p {
-    width: 100% !important;
-    max-width: 100% !important;
-    text-align: center !important;
-    margin: 0 auto 18px auto !important;
-    line-height: 1.8 !important;
-  }
-
-  /* Social icons in one centered row */
-  .social-links {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    flex-wrap: nowrap !important;
-
-    width: 100% !important;
-    gap: 18px !important;
-
-    margin: 0 auto !important;
-  }
-
-  .social-links a {
+  /* Businesses items */
+  .footer-grid > div:nth-child(3) p {
+    font-size: 14px !important;
+    line-height: 1 !important;
+    color: #d1d5db !important;
+    padding: 7px 0 !important;
     margin: 0 !important;
-    padding: 0 !important;
+    display: block !important;
+    white-space: nowrap !important;
   }
 
-} 
-@media (max-width: 768px) {
-
-  .footer-grid > div:nth-child(4) {
-    transform: translateX(-35px) !important;
-  }
-
-}
-@media (max-width: 768px) {
-
-  .footer-grid > div:first-child {
-    grid-column: 1 / -1 !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-
+  /* Footer bottom */
+  .footer-bottom {
+    margin-top: 28px !important;
+    padding-top: 18px !important;
     text-align: center !important;
-
-    width: 100% !important;
-    margin: 0 auto !important;
-  }
-
-  .footer-grid > div:first-child h2,
-  .footer-grid > div:first-child p {
-    text-align: center !important;
-    width: 100% !important;
-  }
-
-  .social-links {
-    justify-content: center !important;
+    font-size: 12px !important;
+    color: #9ca3af !important;
+    border-top: 1px solid rgba(255,255,255,0.1) !important;
     width: 100% !important;
   }
 
 }
-@media (max-width: 768px) {
+/* ================================================================
+   FOOTER DESKTOP FIX
+   Paste at BOTTOM of main.css after your footer mobile code
+   ================================================================ */
+
+/* Desktop — override the row-2 wrapper to behave like normal grid */
+@media (min-width: 769px) {
 
   .footer-grid {
-    grid-template-columns: 55% 45% !important;
+    display: grid !important;
+    grid-template-columns: 2fr 1fr 1fr 1fr !important;
+    gap: 50px !important;
+    align-items: flex-start !important;
+  }
+
+  /* Make footer-row-2 wrapper invisible on desktop —
+     its children (About Us + Businesses) become normal grid items */
+  .footer-row-2 {
+    display: contents !important;
+    /* "contents" removes the div from layout,
+        children go directly into the parent grid
+        so the 4-column desktop layout is restored */
   }
 
 }
+/* ================================================================
+   FOOTER SPACING + MADE WITH LOVE FIX
+   ================================================================ */
+
 @media (max-width: 768px) {
 
-  .footer-grid > div:nth-child(4) {
-    margin-left: -60px !important;
+  /* Gap between About Us and Connect */
+  .footer-grid > div:nth-child(3) {
+    margin-top: 20px !important;
   }
 
+  /* Connect section gap from About Us */
+  .footer-grid > div:nth-child(4) {
+    margin-top: 20px !important;
+  }
+
+}
+
+/* Made with Love text */
+.footer-made {
+  text-align: center !important;
+  font-size: 13px !important;
+  color: #9ca3af !important;
+  margin-bottom: 8px !important;
+}
+
+.footer-made span {
+  color: #e74c3c !important;
+  font-size: 15px !important;
+}
+
+@media (max-width:768px){
+
+  .floating-icons{
+    position:absolute !important;
+
+    left:50% !important;
+
+    transform:translateX(-50%) !important;
+
+    top:68% !important;
+
+    right:auto !important;
+
+    display:grid !important;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:10px;
+
+    z-index:10;
+  }
+
+  .tech-icon{
+    width:45px;
+    height:45px;
+  }
+
+  .tech-icon img{
+    width:24px;
+    height:24px;
+  }
+
+  .floating-icons .tech-icon:nth-child(5),
+  .floating-icons .tech-icon:nth-child(6){
+    display:none;
+  }
+
+}
+@media (max-width:768px){
+
+  .floating-icons{
+    position:absolute !important;
+
+    left:50% !important;
+
+    bottom:95px !important;   /* adjust 80-120 if needed */
+
+    top:auto !important;
+    right:auto !important;
+
+    transform:translateX(-50%) !important;
+
+    display:grid !important;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:12px;
+
+    z-index:10;
+  }
+
+  .tech-icon{
+    width:45px;
+    height:45px;
+  }
+
+  .tech-icon img{
+    width:24px;
+    height:24px;
+  }
+
+  /* Hide last 2 icons */
+  .floating-icons .tech-icon:nth-child(5),
+  .floating-icons .tech-icon:nth-child(6){
+    display:none;
+  }
+
+}
+
+@media (max-width:768px){
+
+  /* Hero section height */
+  .careers-hero{
+    height:auto !important;
+    min-height:120vh !important;
+  }
+
+  /* Hero content spacing */
+  .hero-content{
+    padding-bottom:80px !important;
+}
+
+  /* Icons below buttons */
+  .floating-icons{
+    display:flex !important;
+    flex-direction:row !important;
+
+    justify-content:center !important;
+    align-items:center !important;
+
+    gap:12px !important;
+
+    position:relative !important;
+
+    left:auto !important;
+    right:auto !important;
+    top:auto !important;
+    bottom:auto !important;
+
+    transform:none !important;
+
+    width:100% !important;
+
+ margin-top:5px !important;
+margin-bottom:10px !important;
+
+    z-index:9999 !important;
+  }
+.floating-icons{
+  flex-wrap:wrap !important;
+  max-width:240px !important;
+  margin:10px auto !important;
+}
+  
+
+  .tech-icon{
+    width:45px !important;
+    height:45px !important;
+
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center !important;
+  }
+
+  .tech-icon img{
+    width:24px !important;
+    height:24px !important;
+  }
+
+}
+@media (max-width:768px){
+
+  .floating-icons{
+    margin-top:-60px !important;
+    margin-bottom:10px !important;
+  }
+
+}
+/* Increase icon size */
+@media screen and (max-width:768px){
+
+  .floating-icons .tech-icon{
+    width:70px !important;
+    height:70px !important;
+
+    min-width:70px !important;
+    min-height:70px !important;
+
+    border-radius:18px !important;
+  }
+
+  .floating-icons .tech-icon img{
+    width:40px !important;
+    height:40px !important;
+
+    max-width:40px !important;
+    max-height:40px !important;
+  }
+
+}
+@media (max-width:768px){
+
+  .career-track{
+    animation:scrollTicker 6s linear infinite !important;
+  }
+
+}
+.about-stats{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+
+  margin-top:25px;
+
+  flex-wrap:wrap;
+}
+
+.stat-box{
+  
+
+  backdrop-filter:blur(8px);
+
+  padding:12px 18px;
+
+  border-radius:14px;
+
+  min-width:90px;
+
+  text-align:center;
+
+
+}
+
+.stat-box h3{
+  color:#fff;
+  margin:0;
+
+  font-size:1.6rem;
+  font-weight:700;
+}
+
+.stat-box span{
+  color:#f5f5f5;
+
+  font-size:0.85rem;
+}
+@media(max-width:768px){
+
+  .about-stats{
+    gap:10px;
+    margin-top:20px;
+  }
+
+  .stat-box{
+    min-width:80px;
+    padding:10px 12px;
+  }
+
+  .stat-box h3{
+    font-size:1.2rem;
+  }
+
+  .stat-box span{
+    font-size:0.75rem;
+  }
+
+}
+.stat-box:nth-child(1){
+  background:#00c896;
+  color:white;
+}
+
+.stat-box:nth-child(2){
+   background:#00c896;
+  color:white;
+}
+
+.stat-box:nth-child(3){
+  background:#00c896;
+  color:white;
 }
